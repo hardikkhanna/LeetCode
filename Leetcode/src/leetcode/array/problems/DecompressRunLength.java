@@ -3,14 +3,15 @@
  */
 package leetcode.array.problems;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  * @author Hardik
  *
- *         7:21:31 PM
+ *         7:43:43 PM
  */
-public class SmallerNumbersThanCurrent {
+public class DecompressRunLength {
 
 	/**
 	 * @param args
@@ -22,7 +23,7 @@ public class SmallerNumbersThanCurrent {
 		for (int i = 0; i < n; i++) {
 			array[i] = sc.nextInt();
 		}
-		array = smallerNumbersThanCurrent(array);
+		array = decompressRLElist(array);
 		for (int i = 0; i < array.length; i++) {
 			System.out.print(array[i] + " ");
 		}
@@ -33,20 +34,18 @@ public class SmallerNumbersThanCurrent {
 	 * @param array
 	 * @return
 	 */
-	private static int[] smallerNumbersThanCurrent(int[] nums) {
-		int[] freq = new int[101];
-		int[] count = new int[nums.length];
-		for (int a : nums)
-			freq[a]++;
-		for (int i = 1; i < freq.length; i++) {
-			freq[i] += freq[i - 1];
+	private static int[] decompressRLElist(int[] nums) {
+		int len = 0;
+		for (int i = 0; i < nums.length; i += 2) {
+			len += nums[i];
 		}
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] == 0)
-				continue;
-			count[i] = freq[nums[i] - 1];
+		int[] res = new int[len];
+		int ind = 0;
+		for (int i = 0; i < nums.length; i += 2) {
+			Arrays.fill(res, ind, ind + nums[i], nums[i + 1]);
+			ind = ind + nums[i];
 		}
-		return count;
+		return res;
 	}
 
 }

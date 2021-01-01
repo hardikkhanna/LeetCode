@@ -3,14 +3,16 @@
  */
 package leetcode.array.problems;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * @author Hardik
  *
- *         7:21:31 PM
+ *         7:54:32 PM
  */
-public class SmallerNumbersThanCurrent {
+public class CreateTargetArray {
 
 	/**
 	 * @param args
@@ -22,31 +24,33 @@ public class SmallerNumbersThanCurrent {
 		for (int i = 0; i < n; i++) {
 			array[i] = sc.nextInt();
 		}
-		array = smallerNumbersThanCurrent(array);
+		int[] element = new int[n];
+		for (int i = 0; i < n; i++) {
+			element[i] = sc.nextInt();
+		}
+		array = createTargetArray(array, element);
 		for (int i = 0; i < array.length; i++) {
 			System.out.print(array[i] + " ");
 		}
 		sc.close();
+
 	}
 
 	/**
 	 * @param array
+	 * @param element
 	 * @return
 	 */
-	private static int[] smallerNumbersThanCurrent(int[] nums) {
-		int[] freq = new int[101];
-		int[] count = new int[nums.length];
-		for (int a : nums)
-			freq[a]++;
-		for (int i = 1; i < freq.length; i++) {
-			freq[i] += freq[i - 1];
-		}
+	private static int[] createTargetArray(int[] nums, int[] index) {
+		ArrayList<Integer> targetList = new ArrayList<Integer>();
+
 		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] == 0)
-				continue;
-			count[i] = freq[nums[i] - 1];
+
+			targetList.add(index[i], nums[i]);
+
 		}
-		return count;
+
+		return targetList.stream().mapToInt(e -> e.intValue()).toArray();
 	}
 
 }
