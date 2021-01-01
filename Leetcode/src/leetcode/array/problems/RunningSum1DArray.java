@@ -1,7 +1,6 @@
 package leetcode.array.problems;
 
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class RunningSum1DArray {
 
