@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 3, 2021 Time : 1:00:58 PM
  */
