@@ -3,11 +3,12 @@
  */
 package leetcode.string.problems;
 
+import java.util.Scanner;
+
 /**
- * @author NIPC-43
+ * @author Hardik
  *
- * Date : Jan 3, 2021
- * Time : 2:38:36 PM
+ *         Date : Jan 3, 2021 Time : 2:38:36 PM
  */
 public class SplitStringInBalancedString {
 
@@ -15,8 +16,25 @@ public class SplitStringInBalancedString {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		int ans = balancedStringSplit(str);
+		System.out.println(ans);
+		sc.close();
+	}
 
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static int balancedStringSplit(String s) {
+		int res = 0, cnt = 0;
+		for (int i = 0; i < s.length(); ++i) {
+			cnt += s.charAt(i) == 'L' ? 1 : -1;
+			if (cnt == 0)
+				++res;
+		}
+		return res;
 	}
 
 }
