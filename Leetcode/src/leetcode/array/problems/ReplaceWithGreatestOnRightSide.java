@@ -8,9 +8,9 @@ import java.util.Scanner;
 /**
  * @author Hardik
  *
- *         Date : Jan 3, 2021 Time : 1:59:04 PM
+ *         Date : Jan 3, 2021 Time : 2:13:55 PM
  */
-public class FinalPricesWithSpecialDiscount {
+public class ReplaceWithGreatestOnRightSide {
 
 	/**
 	 * @param args
@@ -22,7 +22,7 @@ public class FinalPricesWithSpecialDiscount {
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = sc.nextInt();
 		}
-		arr = finalPrices(arr);
+		arr = replaceElements(arr);
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
@@ -33,16 +33,23 @@ public class FinalPricesWithSpecialDiscount {
 	 * @param arr
 	 * @return
 	 */
-	private static int[] finalPrices(int[] prices) {
-		for (int i = 0; i < prices.length - 1; i++) {
-			for (int j = i + 1; j < prices.length; j++) {
-				if (prices[i] >= prices[j]) {
-					prices[i] = prices[i] - prices[j];
-					break;
-				}
-			}
+	private static int[] replaceElements(int[] arr) {
+		if(arr.length == 1) {
+			arr[arr.length - 1] = -1;
+			return arr;
 		}
-		return prices;
+		for (int i = 0; i < arr.length - 1; i++) {
+			int max = Integer.MIN_VALUE;
+			for (int j = i + 1; j < arr.length; j++) {
+				if(arr[j] > max) {
+					max = arr[j];
+				}
+				
+			}
+			arr[i] = max;
+		}
+		arr[arr.length - 1] = -1;
+		return arr;
 	}
 
 }
