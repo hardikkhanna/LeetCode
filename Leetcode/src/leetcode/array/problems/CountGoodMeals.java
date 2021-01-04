@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 3, 2021 Time : 7:59:44 PM
  */

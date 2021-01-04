@@ -4,7 +4,7 @@
 package leetcode.linkedlist.prolems;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 4, 2021 Time : 9:41:43 AM
  */
