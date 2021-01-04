@@ -43,7 +43,7 @@ public class ScannerInput {
 			curr = curr.next;
 		}
 		curr.next = temp;
-		System.out.print(curr.val + "->");
+		///System.out.print(curr.val + "->");
 	}
 
 }
