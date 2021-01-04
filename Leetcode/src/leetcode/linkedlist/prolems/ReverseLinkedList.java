@@ -8,7 +8,7 @@ package leetcode.linkedlist.prolems;
  *
  *         Date : Jan 4, 2021 Time : 10:43:48 AM
  */
-public class DeleteNodeInLinkedList extends ScannerInput {
+public class ReverseLinkedList extends ScannerInput {
 
 	/**
 	 * @param args
