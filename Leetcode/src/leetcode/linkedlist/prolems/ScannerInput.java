@@ -12,18 +12,19 @@ import java.util.Scanner;
  */
 public class ScannerInput {
 
+
+	static Scanner sc = new Scanner(System.in);
 	/**
 	 * @param args
 	 */
 	public static ListNode scannerInput() {
-		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		ListNode head = new ListNode();
 		while (n-- > 0) {
 			insertNode(head, sc.nextInt());
 
 		}
-		sc.close();
+		//sc.close();
 		return head;
 	}
 
@@ -43,7 +44,7 @@ public class ScannerInput {
 			curr = curr.next;
 		}
 		curr.next = temp;
-		///System.out.print(curr.val + "->");
+		/// System.out.print(curr.val + "->");
 	}
 
 }
