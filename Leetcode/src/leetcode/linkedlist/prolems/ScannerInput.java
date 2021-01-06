@@ -12,8 +12,8 @@ import java.util.Scanner;
  */
 public class ScannerInput {
 
-
 	static Scanner sc = new Scanner(System.in);
+
 	/**
 	 * @param args
 	 */
@@ -24,7 +24,7 @@ public class ScannerInput {
 			insertNode(head, sc.nextInt());
 
 		}
-		//sc.close();
+		// sc.close();
 		return head;
 	}
 
@@ -45,6 +45,14 @@ public class ScannerInput {
 		}
 		curr.next = temp;
 		/// System.out.print(curr.val + "->");
+	}
+
+	public static void printLinkedList(ListNode head) {
+		while (head != null) {
+			System.out.print(head.val);
+			head = head.next;
+			
+		}
 	}
 
 }
