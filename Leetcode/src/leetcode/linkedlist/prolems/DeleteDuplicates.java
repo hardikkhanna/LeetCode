@@ -28,23 +28,16 @@ public class DeleteDuplicates extends ScannerInput {
 	 * @return
 	 */
 	private static ListNode deleteDuplicates(ListNode head) {
-		int[] freq = new int[1001];
 		ListNode temp = head;
 		while (temp != null) {
-			freq[temp.val]++;
-			temp = temp.next;
-		}
-		temp = head;
-		while (temp.next != null) {
-			if (freq[temp.val] > 1) {
+			if (temp.next != null && temp.val == temp.next.val) {
 				temp.val = temp.next.val;
 				temp.next = temp.next.next;
-				continue;
+			} else {
+				temp = temp.next;
 			}
-			temp = temp.next;
 		}
-		temp = head;
-		return temp;
+		return temp = head;
 	}
 
 }
