@@ -19,9 +19,9 @@ public class ScannerInput {
 	 */
 	public static ListNode scannerInput() {
 		int n = sc.nextInt();
-		ListNode head = new ListNode();
+		ListNode head = null;
 		while (n-- > 0) {
-			insertNode(head, sc.nextInt());
+			head = insertNode(head, sc.nextInt());
 
 		}
 		// sc.close();
@@ -32,26 +32,26 @@ public class ScannerInput {
 	 * @param head
 	 * @param nextInt
 	 */
-	private static void insertNode(ListNode head, int nextInt) {
-		ListNode curr = head;
-
-		ListNode temp = new ListNode();
-		temp.val = nextInt;
-		temp.next = null;
-
-		while (curr.next != null) {
-
-			curr = curr.next;
+	private static ListNode insertNode(ListNode head, int nextInt) {
+		if (head == null) {
+			head = new ListNode();
+			head.val = nextInt;
+			head.next = null;
+			return head;
 		}
-		curr.next = temp;
-		/// System.out.print(curr.val + "->");
+		ListNode temp = head;
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+		temp.next = new ListNode(nextInt);
+		return head;
 	}
 
 	public static void printLinkedList(ListNode head) {
 		while (head != null) {
 			System.out.print(head.val);
 			head = head.next;
-			
+
 		}
 	}
 
