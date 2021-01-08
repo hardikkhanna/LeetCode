@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package leetcode.sort.problems;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 8, 2021 Time : 5:49:08 PM
+ */
+public class ShuffleString extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String str = "aaiougrt";
+		int[] indices = get1DArray();
+		str = restoreString(indices, str);
+		System.out.println(str);
+
+	}
+
+	/**
+	 * @param indices
+	 * @param str
+	 * @return
+	 */
+	private static String restoreString(int[] indices, String str) {
+		char[] ch = new char[str.length()];
+		for (int i = 0; i < indices.length; i++) {
+			ch[indices[i]] = str.charAt(i);
+		}
+		return String.valueOf(ch);
+	}
+
+}
