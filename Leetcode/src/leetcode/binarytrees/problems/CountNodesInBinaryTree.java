@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 13, 2021 Time : 7:41:19 AM
+ */
+public class CountNodesInBinaryTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		int ans = countNodes(root);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param root
+	 * @return
+	 */
+	private static int countNodes(BinaryTreeNode<Integer> root) {
+		if (root == null) {
+			return 0;
+		}
+		int count = 1;
+		count += countNodes(root.left);
+		count += countNodes(root.right);
+		return count;
+	}
+
+}
