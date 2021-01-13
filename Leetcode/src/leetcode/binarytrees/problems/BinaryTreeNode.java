@@ -22,4 +22,8 @@ public class BinaryTreeNode<T> {
 		this.data = data;
 	}
 
+	public BinaryTreeNode() {
+
+	}
+
 }
