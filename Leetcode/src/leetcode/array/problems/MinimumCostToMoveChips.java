@@ -3,8 +3,6 @@
  */
 package leetcode.array.problems;
 
-import java.util.HashMap;
-
 /**
  * @author Hardik
  *
