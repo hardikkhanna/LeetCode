@@ -37,7 +37,7 @@ public class IncreasingBST extends BinaryTreeUse {
 	/**
 	 * @param root
 	 */
-	private static void inorder(BinaryTreeNode<Integer> node) {
+	public static void inorder(BinaryTreeNode<Integer> node) {
 		if (node == null)
 			return;
 		inorder(node.left);

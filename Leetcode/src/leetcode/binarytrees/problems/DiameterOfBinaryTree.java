@@ -44,6 +44,8 @@ public class DiameterOfBinaryTree extends BinaryTreeUse {
 		return 1 + Math.max(lh, rh);
 	}
 
+	
+
 	public static Pair<Integer, Integer> heightDiameter(BinaryTreeNode<Integer> root) {
 		if (root == null) {
 			Pair<Integer, Integer> output = new Pair<>();

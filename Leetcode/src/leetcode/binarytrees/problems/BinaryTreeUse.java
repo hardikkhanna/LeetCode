@@ -57,6 +57,31 @@ public class BinaryTreeUse {
 		}
 	}
 
+	public static void inorder(BinaryTreeNode<Integer> root) {
+		if (root == null) {
+			return;
+		}
+		inorder(root.left);
+		System.out.print(root.data + " ");
+		inorder(root.right);
+	}
+
+	public static void preorder(BinaryTreeNode<Integer> root) {
+		if (root == null)
+			return;
+		System.out.print(root.data + " ");
+		preorder(root.left);
+		preorder(root.right);
+	}
+
+	public static void postorder(BinaryTreeNode<Integer> root) {
+		if (root == null)
+			return;
+		postorder(root.left);
+		postorder(root.right);
+		System.out.print(root.data + " ");
+	}
+
 	public static BinaryTreeNode<Integer> takeInput(Scanner s) {
 		int rootData;
 		System.out.println("Enter root data");
