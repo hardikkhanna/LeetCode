@@ -6,7 +6,7 @@ package leetcode.math.probems;
 import java.util.Scanner;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 18, 2021 Time : 7:36:52 AM
  */

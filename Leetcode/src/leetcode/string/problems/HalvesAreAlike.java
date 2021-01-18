@@ -6,7 +6,7 @@ package leetcode.string.problems;
 import java.util.HashMap;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 17, 2021 Time : 3:03:20 PM
  */

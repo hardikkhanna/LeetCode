@@ -4,7 +4,7 @@
 package leetcode.binarytrees.problems;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 16, 2021 Time : 4:59:26 PM
  */

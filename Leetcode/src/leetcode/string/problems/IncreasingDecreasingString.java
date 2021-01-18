@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 17, 2021 Time : 2:40:31 PM
  */
