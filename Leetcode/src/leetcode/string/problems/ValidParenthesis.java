@@ -6,7 +6,7 @@ package leetcode.string.problems;
 import java.util.Stack;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 20, 2021 Time : 2:26:33 PM
  */

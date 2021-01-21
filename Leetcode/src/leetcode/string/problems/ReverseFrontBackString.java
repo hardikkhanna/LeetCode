@@ -4,7 +4,7 @@
 package leetcode.string.problems;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 20, 2021 Time : 10:07:31 PM
  */
