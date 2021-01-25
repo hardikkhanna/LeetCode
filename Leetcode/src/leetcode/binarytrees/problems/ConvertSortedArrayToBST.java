@@ -6,7 +6,7 @@ package leetcode.binarytrees.problems;
 import leetcode.array.problems.ScannerInput;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 22, 2021 Time : 11:43:13 AM
  */
