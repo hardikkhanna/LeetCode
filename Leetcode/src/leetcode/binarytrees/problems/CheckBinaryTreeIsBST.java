@@ -9,7 +9,7 @@ package leetcode.binarytrees.problems;
  *         Date : Jan 25, 2021 Time : 1:07:50 PM
  */
 public class CheckBinaryTreeIsBST extends BinaryTreeUse {
-
+ 
 	/**
 	 * @param args
 	 */
