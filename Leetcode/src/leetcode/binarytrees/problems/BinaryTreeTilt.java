@@ -3,8 +3,6 @@
  */
 package leetcode.binarytrees.problems;
 
-import java.util.List;
-
 /**
  * @author Hardik
  *
