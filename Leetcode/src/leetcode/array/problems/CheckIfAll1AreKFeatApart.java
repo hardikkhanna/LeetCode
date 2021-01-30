@@ -21,7 +21,7 @@ public class CheckIfAll1AreKFeatApart extends ScannerInput {
 		int k = sc.nextInt();
 		Boolean ans = kLengthApart(nums, k);
 		System.out.println(ans);
-
+		sc.close();
 	}
 
 	/**
