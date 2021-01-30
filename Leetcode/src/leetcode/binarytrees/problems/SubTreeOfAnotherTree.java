@@ -26,7 +26,7 @@ public class SubTreeOfAnotherTree extends BinaryTreeUse {
 	 * @param root2
 	 * @return
 	 */
-	public boolean isSubtree(BinaryTreeNode<Integer> s, BinaryTreeNode<Integer> t) {
+	public static boolean isSubtree(BinaryTreeNode<Integer> s, BinaryTreeNode<Integer> t) {
 		if (s == null)
 			return false;
 		if (isSame(s, t))
@@ -34,7 +34,7 @@ public class SubTreeOfAnotherTree extends BinaryTreeUse {
 		return isSubtree(s.left, t) || isSubtree(s.right, t);
 	}
 
-	private boolean isSame(BinaryTreeNode<Integer> s, BinaryTreeNode<Integer> t) {
+	private static boolean isSame(BinaryTreeNode<Integer> s, BinaryTreeNode<Integer> t) {
 		if (s == null && t == null)
 			return true;
 		if (s == null || t == null)
