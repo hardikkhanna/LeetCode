@@ -95,6 +95,7 @@ public class BinaryTreeUse {
 		return root;
 	}
 
+	@SuppressWarnings("resource")
 	public static BinaryTreeNode<Integer> takeInputLevelWise() {
 		Scanner s = new Scanner(System.in);
 		QueueUsingLL<BinaryTreeNode<Integer>> pendingNodes = new QueueUsingLL<>();

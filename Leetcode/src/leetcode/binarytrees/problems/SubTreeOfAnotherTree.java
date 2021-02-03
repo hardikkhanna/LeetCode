@@ -16,7 +16,7 @@ public class SubTreeOfAnotherTree extends BinaryTreeUse {
 	public static void main(String[] args) {
 		BinaryTreeNode<Integer> root = takeInputLevelWise();
 		BinaryTreeNode<Integer> root2 = takeInputLevelWise();
-		Boolean ans = isSubtree(root, root);
+		Boolean ans = isSubtree(root, root2);
 		System.out.println(ans);
 
 	}
