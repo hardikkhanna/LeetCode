@@ -15,8 +15,8 @@ public class TrimABinaryTreeSearchTree extends BinaryTreeUse {
 	 */
 	public static void main(String[] args) {
 		BinaryTreeNode<Integer> root = takeInputLevelWise();
-		int low = 0;
-		int high = 0;
+		int low = 3;
+		int high = 4;
 
 		root = trimBST(root, low, high);
 		printTreeLevelWise(root);
@@ -29,17 +29,30 @@ public class TrimABinaryTreeSearchTree extends BinaryTreeUse {
 	 * @return
 	 */
 	private static BinaryTreeNode<Integer> trimBST(BinaryTreeNode<Integer> root, int L, int R) {
+//		if (root == null) {
+//			return null;
+//		}
+//		if (root.data >= L && root.data <= R) {
+//			root.left = trimBST(root.left, L, R);
+//			root.right = trimBST(root.right, L, R);
+//		} else if (root.data < L) {
+//			root = trimBST(root.right, L, R);
+//		} else if (root.data > R) {
+//			root = trimBST(root.left, L, R);
+//		}
+//		return root;
+
 		if (root == null) {
 			return null;
 		}
-		if (root.data >= L && root.data <= R) {
-			root.left = trimBST(root.left, L, R);
-			root.right = trimBST(root.right, L, R);
-		} else if (root.data < L) {
-			root = trimBST(root.right, L, R);
-		} else if (root.data > R) {
-			root = trimBST(root.left, L, R);
+		if (root.data < L) {
+			return trimBST(root.right, L, R);
 		}
+		if (root.data > R) {
+			return trimBST(root.left, L, R);
+		}
+		root.left = trimBST(root.left, L, R);
+		root.right = trimBST(root.right, L, R);
 		return root;
 	}
 
