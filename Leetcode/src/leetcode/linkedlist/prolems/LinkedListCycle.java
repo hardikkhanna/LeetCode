@@ -3,6 +3,12 @@
  */
 package leetcode.linkedlist.prolems;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * @author Hardik
  *
@@ -14,9 +20,8 @@ public class LinkedListCycle extends ScannerInput {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ListNode head = scannerInput();
-		System.out.println(hasCycle(head));
-
+		
+		
 	}
 
 	/**
