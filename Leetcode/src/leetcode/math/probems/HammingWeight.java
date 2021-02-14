@@ -4,7 +4,7 @@
 package leetcode.math.probems;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Feb 3, 2021 Time : 11:02:16 AM
  */

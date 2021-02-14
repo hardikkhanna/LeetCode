@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Jan 31, 2021 Time : 4:20:43 PM
  */
