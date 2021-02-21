@@ -24,7 +24,7 @@ public class UglyNumbers extends ScannerInput {
 		int ans = normalApproach(num);
 		long endTime = System.currentTimeMillis();
 		System.out.println("Time taken for normal approach : " + Math.subtractExact(endTime, startTime) / 1000);
-		//System.out.println("Answer from Normal Approach : " + ans);
+		System.out.println("Answer from Normal Approach : " + ans);
 		sc.close();
 	}
 
