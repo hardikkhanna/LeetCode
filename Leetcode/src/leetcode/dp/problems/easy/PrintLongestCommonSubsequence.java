@@ -46,7 +46,6 @@ public class PrintLongestCommonSubsequence {
 		int i = m;
 		int j = n;
 		while (i > 0 && j > 0) {
-
 			if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
 				str.append(word1.charAt(i - 1));
 				i--;
