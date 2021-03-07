@@ -38,6 +38,19 @@ public class ScannerInput {
 		}
 		return arr;
 	}
+	
+	public static String[][] get2DStringArray() {
+
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		String[][] arr = new String[n][m];
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < m; j++) {
+				arr[i][j] = sc.nextLine();
+			}
+		}
+		return arr;
+	}
 
 	public static int[][] getDynamic2D() {
 

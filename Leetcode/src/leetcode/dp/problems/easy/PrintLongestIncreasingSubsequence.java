@@ -4,9 +4,7 @@
 package leetcode.dp.problems.easy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Vector;
 
 import leetcode.array.problems.ScannerInput;
 
