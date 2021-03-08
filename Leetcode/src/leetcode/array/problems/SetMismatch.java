@@ -3,9 +3,6 @@
  */
 package leetcode.array.problems;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * @author NIPC-43
  *
@@ -17,6 +14,7 @@ public class SetMismatch extends ScannerInput {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		char[] ch = new char[2];
 		int[] errorNums = get1DArray();
 		int[] ans = findErrorNums(errorNums);
 		System.out.print(ans[0] + " " + ans[1]);

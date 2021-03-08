@@ -7,55 +7,58 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 class InvalidInputException extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	InvalidInputException(String s) {
 		super(s);
 	}
 }
 
 class Employee {
-   
-   private int id = 0;
-   private String name = null;
-   private boolean male = true;
-    
-    Employee(int id, String name,  boolean male) {
-       super();
-       this.id = id;
-       this.name = name;
-       this.male = male;
-   }
-     
-   @Override
-    public String toString() {
-        return "Employee [id=" + id + ", name=" + name + ",  male=" + male + "]";
-    }   
-    
-   @Override
-   public boolean equals(Object obj)
-   {
-	   Employee student = (Employee) obj;
 
-       return (id == student.id);
-   }
-   
-    @Override
-    public int hashCode() {
+	private int id = 0;
+	private String name = null;
+	private boolean male = true;
+
+	Employee(int id, String name, boolean male) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.male = male;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ",  male=" + male + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Employee student = (Employee) obj;
+
+		return (id == student.id);
+	}
+
+	@Override
+	public int hashCode() {
 		return id;
-        // Complete all relevent code
-    }
-       
-   
+		// Complete all relevent code
+	}
+
 }
 
 public class Test {
-    
-    /*
-    * Validate the input and create Employee object
-    * If any of the given input is not valid throw InvalidInputException();
-    */
-	
+
+	/*
+	 * Validate the input and create Employee object If any of the given input is
+	 * not valid throw InvalidInputException();
+	 */
+
 	private static Employee emp;
-	
+
 	public Employee createEmployee(String record) {
 		String[] st = record.split(",");
 		int id = Integer.valueOf(st[0]);
@@ -65,34 +68,38 @@ public class Test {
 		return emp;
 
 	}
-    
-    public static void main(String[] str) throws InvalidInputException {
-        
-        //Input is expected as comma separated values for Employee object like id(int), name (String),isMale(boolean)"
-        // 1,John,true
-        Scanner scan = new Scanner(System.in);
-        
-        HashSet<Employee> employeeSet = new HashSet<>();
-       
-        /*Process each line and create Employee object using the "createEmployee" method add in employeeSet*/
-        while (scan.hasNextLine()) {
-            try {
-            	 String inputString  = scan.nextLine();
-            	if(inputString.trim().isEmpty()) {
-            		break;
-            	}
-            	Test t =  new Test();
-            	t.createEmployee(inputString);
-                employeeSet.add(emp);
-            }catch(Exception e) {
-            	throw new InvalidInputException("not valid");  
-            }
-         
-        }
-        
-        //Don't delete or modify this print statement
-        System.out.println("Employees info : "+ employeeSet);
-        scan.close();
-    }
+
+	public static void main(String[] str) throws InvalidInputException {
+
+		// Input is expected as comma separated values for Employee object like id(int),
+		// name (String),isMale(boolean)"
+		// 1,John,true
+		Scanner scan = new Scanner(System.in);
+
+		HashSet<Employee> employeeSet = new HashSet<>();
+
+		/*
+		 * Process each line and create Employee object using the "createEmployee"
+		 * method add in employeeSet
+		 */
+		while (scan.hasNextLine()) {
+			try {
+				String inputString = scan.nextLine();
+				if (inputString.trim().isEmpty()) {
+					break;
+				}
+				Test t = new Test();
+				t.createEmployee(inputString);
+				employeeSet.add(emp);
+			} catch (Exception e) {
+				throw new InvalidInputException("not valid");
+			}
+
+		}
+
+		// Don't delete or modify this print statement
+		System.out.println("Employees info : " + employeeSet);
+		scan.close();
+	}
 
 }

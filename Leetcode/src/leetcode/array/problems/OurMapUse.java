@@ -23,6 +23,19 @@ public class OurMapUse {
 		for (int i = 0; i < 20; i++) {
 			System.out.println("abc" + i + ":" + map.getValue("abc" + i));
 		}
+
+		MyHashMap obj = new MyHashMap();
+		obj.remove(14);
+		for (int i = 0; i < 20; i++) {
+			obj.put(i, 1 + i);
+			// System.out.println("i = " + i + " lf = " + map.loadFactor());
+		}
+		int param_2 = obj.get(1);
+		System.out.println(param_2);
+		obj.remove(1);
+		for (int i = 0; i < 20; i++) {
+			System.out.println("abc" + i + ":" + obj.get(i));
+		}
 	}
 
 }

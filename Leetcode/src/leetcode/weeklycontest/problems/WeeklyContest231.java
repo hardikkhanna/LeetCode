@@ -20,7 +20,7 @@ public class WeeklyContest231 {
 		String str = sc.next();
 		Boolean ans = checkOnesSegment(str);
 		System.out.println(ans);
-
+		sc.close();
 	}
 
 	/**
