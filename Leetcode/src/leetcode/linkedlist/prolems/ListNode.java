@@ -9,8 +9,8 @@ package leetcode.linkedlist.prolems;
  *         Date : Jan 4, 2021 Time : 9:48:27 AM
  */
 public class ListNode {
-	int val;
-	ListNode next;
+	public int val;
+	public ListNode next;
 
 	ListNode() {
 	}

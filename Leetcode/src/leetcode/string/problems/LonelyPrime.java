@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Feb 23, 2021 Time : 12:08:01 PM
  */

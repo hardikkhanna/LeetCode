@@ -6,7 +6,7 @@ package leetcode.weeklycontest.problems;
 import java.util.Scanner;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Feb 21, 2021 Time : 8:31:05 AM
  */

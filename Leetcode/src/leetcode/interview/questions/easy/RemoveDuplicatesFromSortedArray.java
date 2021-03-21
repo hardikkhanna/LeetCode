@@ -6,7 +6,7 @@ package leetcode.interview.questions.easy;
 import leetcode.array.problems.ScannerInput;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Mar 8, 2021 Time : 4:53:48 PM
  */

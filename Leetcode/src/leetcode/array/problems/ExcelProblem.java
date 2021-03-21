@@ -6,7 +6,7 @@ package leetcode.array.problems;
 import java.util.Scanner;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Mar 7, 2021 Time : 9:35:21 PM
  */

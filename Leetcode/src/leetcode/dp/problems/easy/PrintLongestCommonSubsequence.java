@@ -6,7 +6,7 @@ package leetcode.dp.problems.easy;
 import java.util.Scanner;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Feb 21, 2021 Time : 1:24:10 PM
  */

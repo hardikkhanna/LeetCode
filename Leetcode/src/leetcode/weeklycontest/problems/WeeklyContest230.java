@@ -9,7 +9,7 @@ import java.util.List;
 import leetcode.array.problems.ScannerInput;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Feb 28, 2021 Time : 8:07:33 AM
  */

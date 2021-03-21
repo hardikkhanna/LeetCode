@@ -4,7 +4,7 @@
 package leetcode.dp.problems.easy;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  * Date : Feb 23, 2021
  * Time : 11:33:53 AM
