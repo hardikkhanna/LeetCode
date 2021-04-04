@@ -14,7 +14,7 @@ import java.util.Scanner;
 import leetcode.array.problems.ScannerInput;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Mar 28, 2021 Time : 8:36:00 AM
  */
