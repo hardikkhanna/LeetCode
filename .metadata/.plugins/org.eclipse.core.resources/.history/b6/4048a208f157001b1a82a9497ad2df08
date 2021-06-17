@@ -1,0 +1,57 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 16, 2021 Time : 5:16:56 PM
+ */
+public class LeafSimilarValues extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root1 = takeInputLevelWise();
+		BinaryTreeNode<Integer> root2 = takeInputLevelWise();
+		Boolean ans = leafSimilar(root1, root2);
+		System.out.println(ans);
+	}
+
+	/**
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	private static Boolean leafSimilar(BinaryTreeNode<Integer> root1, BinaryTreeNode<Integer> root2) {
+		List<Integer> list1 = new ArrayList<Integer>();
+		List<Integer> list2 = new ArrayList<Integer>();
+
+		list1 = leafSimilar(root1);
+		list2 = leafSimilar(root2);
+		return list1.equals(list2);
+	}
+
+	/**
+	 * @param root2
+	 * @return
+	 */
+	public static List<Integer> leafSimilar(BinaryTreeNode<Integer> root) {
+
+		List<Integer> list = new ArrayList<Integer>();
+		if (root == null)
+			return list;
+		if (root.left == null && root.right == null)
+			list.add(root.data);
+
+		leafSimilar(root.left);
+		leafSimilar(root.right);
+		return list;
+	}
+
+}

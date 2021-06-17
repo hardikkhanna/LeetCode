@@ -1,0 +1,64 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 23-May-2021 Time : 8:02:58 pm
+ */
+public class ReachDestination {
+
+	private static int[][] dp;
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int sx = 1;
+		int sy = 1;
+		int dx = 1;
+		int dy = 1;
+		// Recursive Approach
+		Boolean ans = reachDestination(sx, sy, dx, dy);
+		System.out.println(ans);
+		// Recursion with Memoizarion
+		ans = reachDestinationMemo(sx, sy, dx, dy);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param sx
+	 * @param sy
+	 * @param dx
+	 * @param dy
+	 * @return
+	 */
+	private static Boolean reachDestinationMemo(int sx, int sy, int dx, int dy) {
+		dp = new int[dx][dy];
+		Arrays.fill(dp, -1);
+		return null;
+	}
+
+	/**
+	 * @param sx
+	 * @param sy
+	 * @param dx
+	 * @param dy
+	 * @return
+	 */
+	private static Boolean reachDestination(int sx, int sy, int dx, int dy) {
+		if (sx == dx && sy == dy)
+			return true;
+		if (sx >= Math.max(dx, dy) || sy >= Math.max(dx, dy))
+			return false;
+
+		Boolean ans = reachDestination(sx + sy, sy, dx, dy) || reachDestination(sx, sx + sy, dx, dy);
+		return ans;
+	}
+
+}

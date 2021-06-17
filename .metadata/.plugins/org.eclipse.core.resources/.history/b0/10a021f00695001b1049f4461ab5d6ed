@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+package leetcode.stack.problems;
+
+import java.util.Stack;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Apr 4, 2021 Time : 10:53:08 AM
+ * @param <E>
+ */
+public class QueueUsingTwoStacks<E> {
+
+	private Stack<E> s1;
+	private Stack<E> s2;
+
+	/**
+	 * 
+	 */
+	public QueueUsingTwoStacks() {
+		s1 = new Stack<E>();
+		s2 = new Stack<E>();
+	}
+
+	public int size() {
+		return s1.size();
+	}
+
+	public boolean isEmpty() {
+		return s1.isEmpty();
+	}
+
+	public int front() {
+
+	}
+
+	public void enqueue(E element) {
+		s1.push(element);
+	}
+
+	public int dequeue() {
+		if (s1.isEmpty()) {
+			throw new QueueEmptyException();
+		}
+
+	}
+
+}

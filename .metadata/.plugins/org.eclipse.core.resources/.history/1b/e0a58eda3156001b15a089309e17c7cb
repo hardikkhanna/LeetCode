@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 14, 2021 Time : 11:58:46 AM
+ */
+public class MinimumCostToMoveChips extends ScannerInp {
+
+	/**
+	 * ut
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] position = get1DArray();
+
+	}
+
+}

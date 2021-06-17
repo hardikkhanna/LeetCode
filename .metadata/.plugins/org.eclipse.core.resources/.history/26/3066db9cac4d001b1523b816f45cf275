@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 3, 2021 Time : 2:38:36 PM
+ */
+public class SplitStringInBalancedString {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		in ans = balancedStringSplit(str);
+		System.out.println(ans);
+		sc.close();
+	}
+
+}

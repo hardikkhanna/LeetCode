@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 5, 2021 Time : 12:15:45 PM
+ */
+public class CanFormArray extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int[][] pieces = get2DArray();
+		Boolean ans = canFormArray(arr, pieces);
+		System.out.println(ans);
+	}
+
+	/**
+	 * @param arr
+	 * @param pieces
+	 * @return
+	 */
+	private static Boolean canFormArray(int[] arr, int[][] pieces) {
+		Arrays.sort(pieces);
+		return null;
+	}
+
+}

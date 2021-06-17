@@ -15,6 +15,7 @@ public class MinimumLengthWord {
 	/**
 	 * @param args
 	 */
+	static int num = 0;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
@@ -22,10 +23,6 @@ public class MinimumLengthWord {
 		System.out.println(length);
 	}
 
-	/**
-	 * @param str
-	 * @return
-	 */
 	private static String minLengthWord(String input) {
 		if (input.length() == 0)
 			return "";

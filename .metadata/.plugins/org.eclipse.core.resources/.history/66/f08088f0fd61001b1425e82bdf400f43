@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 29, 2021 Time : 11:46:37 AM
+ */
+
+class A{
+	public static void sound() {
+		System.out.println("Roar");
+	}
+}
+public class B extends A {
+
+	/**
+	 * @param args
+	 */
+
+	public static void sound() {
+		System.out.println("Roar");
+	}
+	
+	public static void main(String[] args) {
+		A a = new B();
+		a.sound();
+	}
+	
+
+}

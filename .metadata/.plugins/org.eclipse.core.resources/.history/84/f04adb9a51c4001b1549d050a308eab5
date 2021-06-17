@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package oops.concept;
+
+import java.util.ArrayList;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 03-Jun-2021 Time : 3:12:51 pm
+ */
+
+abstract class Pencil {
+	void castSpell(String spell) {
+		System.out.println("spell");
+	}
+	
+	void hello();
+}
+
+public class Sample {
+
+	public static void main(String[] args) {
+		int pi = 3.141;
+		double pi1 = 3.141;
+		float pi2 = 3.141;
+		decimal pi3 = 3.14;
+	}
+
+}

@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 12, 2021 Time : 11:46:12 AM
+ */
+public class BinaryTreeUse {
+
+	public BinaryTreeNode<Integer> takeInput(BinaryTreeNode<Integer> root, T data) {
+
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(1);
+		BinaryTreeNode<Integer> node1 = new BinaryTreeNode<Integer>(2);
+		BinaryTreeNode<Integer> node2 = new BinaryTreeNode<Integer>(3);
+		root.left = node1;
+		root.right = node2;
+
+	}
+
+}

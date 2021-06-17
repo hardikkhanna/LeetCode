@@ -22,40 +22,47 @@ public class BinaryTreeUse {
 		}
 
 		if (root.right != null) {
-			toBePrinted += "R:" + root.right.data;
+			toBePrinted += "R:" + root.right.data;  
 		}
 		System.out.println(toBePrinted);
 		printTree(root.left);
-		printTree(root.right);
+		printTree(root.right); 
 	}
 
-	public static void printTreeLevelWise(BinaryTreeNode<Integer> root) {
-		QueueUsingLL<BinaryTreeNode<Integer>> pendingNodes = new QueueUsingLL<BinaryTreeNode<Integer>>();
-		pendingNodes.enqueue(root);
+	public static <T> void printTreeLevelWise(BinaryTreeNode<T> root) {
+		if(root == null) {
+			System.out.println(-1);
+		} else {
+			QueueUsingLL<BinaryTreeNode<T>> pendingNodes = new QueueUsingLL<BinaryTreeNode<T>>();
+			pendingNodes.enqueue(root);
 
-		while (!pendingNodes.isEmpty()) {
-			BinaryTreeNode<Integer> front;
-			try {
-				front = pendingNodes.dequeue();
-			} catch (QueueEmptyException e) {
-				return;
+			while (!pendingNodes.isEmpty()) {
+				BinaryTreeNode<T> front;
+				try {
+					front = pendingNodes.dequeue();
+				} catch (QueueEmptyException e) {
+					return;
+				}
+				System.out.print(front.data);
+				if (front.left != null) {
+					System.out.print(":L:" + front.left.data + ",");
+					pendingNodes.enqueue(front.left);
+				} else {
+					System.out.print(":L:-1,");
+				}
+				if (front.right != null) {
+					pendingNodes.enqueue(front.right);
+					System.out.print("R:" + front.right.data);
+				} else {
+					System.out.print("R:-1");
+				}
+				System.out.println();
 			}
-			System.out.print(front.data);
-			if (front.left != null) {
-				System.out.print(":L:" + front.left.data + ",");
-				pendingNodes.enqueue(front.left);
-			} else {
-				System.out.print(":L:-1,");
-			}
-			if (front.right != null) {
-				pendingNodes.enqueue(front.right);
-				System.out.print("R:" + front.right.data);
-			} else {
-				System.out.print("R:-1");
-			}
-			System.out.println();
+
 		}
 	}
+	
+	
 
 	public static void inorder(BinaryTreeNode<Integer> root) {
 		if (root == null) {

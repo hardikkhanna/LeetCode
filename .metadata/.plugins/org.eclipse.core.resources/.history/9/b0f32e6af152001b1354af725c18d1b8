@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 10, 2021 Time : 8:38:55 AM
+ */
+public class MinimumHammingDistance extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] source = get1DArray();
+		int[] target = get1DArray();
+		int[][] allowedswaps = get2DArray();
+		int ans = minimumHammingDistance(source, target, allowedswaps);
+		System.out.println(ans);
+
+	}
+
+}

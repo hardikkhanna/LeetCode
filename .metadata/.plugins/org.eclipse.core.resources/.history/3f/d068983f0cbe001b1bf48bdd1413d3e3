@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 26-May-2021
+ * Time : 3:52:00 pm
+ */
+public class BinaryStringWithNoConsecutive1s {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

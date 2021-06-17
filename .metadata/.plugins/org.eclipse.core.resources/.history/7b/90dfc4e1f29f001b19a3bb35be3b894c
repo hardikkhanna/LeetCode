@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 18-Apr-2021
+ * Time : 8:30:40 am
+ */
+public class WeeklyContest237 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		System.out.println(1 & 6);
+	}
+
+}

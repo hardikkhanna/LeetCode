@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 5, 2021
+ * Time : 12:16:21 PM
+ */
+public class ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

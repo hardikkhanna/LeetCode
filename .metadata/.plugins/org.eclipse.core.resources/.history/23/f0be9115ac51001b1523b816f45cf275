@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package leetcode.sort.problems;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 8, 2021 Time : 5:49:08 PM
+ */
+public class ShuffleString extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String str = "codeleet";
+		int[] indices = get1DArray();
+		str = restoreString(indices, str);
+		System.out.println(str);
+
+	}
+
+}

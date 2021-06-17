@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.HashMap;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 3:03:20 PM
+ */
+public class HalvesAreAlike {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String str = "book";
+		Boolean ans = func(str);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static Boolean func(String s) {
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o'
+					|| s.charAt(i) == 'u' || s.charAt(i) == 'A' || s.charAt(i) == 'E' || s.charAt(i) == 'I'
+					|| s.charAt(i) == 'O' || s.charAt(i) == 'U') {
+				if (map.containsKey(s.charAt(i)))
+					map.put(s.charAt(i), map.get(s.charAt(i)) + 1);
+				else
+					map.put(s.charAt(i), 1);
+			}
+
+		}
+		for (Character c : map.keySet()) {
+			if (map.get(c) % 2 != 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+}

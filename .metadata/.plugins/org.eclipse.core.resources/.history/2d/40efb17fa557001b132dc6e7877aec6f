@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.List;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 16, 2021 Time : 8:17:08 AM
+ */
+public class MaximumDepthOfNaryTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>();
+		int ans = maxDepth(root);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param root
+	 * @return
+	 */
+	private static int maxDepth(BinaryTreeNode<Integer> root) {
+		if (root == null)
+			return 0;
+		int maxDepth = 0;
+		for (Node child : root.children)
+			maxDepth = Math.max(maxDepth, maxDepth(child));
+		return maxDepth + 1;
+	}
+
+}

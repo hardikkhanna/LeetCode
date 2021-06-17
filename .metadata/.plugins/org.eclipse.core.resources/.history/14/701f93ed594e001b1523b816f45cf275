@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 4, 2021 Time : 12:13:52 PM
+ */
+public class MergeSortedArrays extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode l1 = scannerInput();
+		ListNode l2 = scannerInput();
+		ListNode mergedList = mergeTwoLists(l1, l2);
+		while (mergedList != null) {
+			System.out.print(mergedList.val);
+			mergedList = mergedList.next;
+		}
+
+	}
+
+}

@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 26, 2021 Time : 12:41:43 PM
+ */
+public class Pattern		 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// Write your code here
+				Scanner sc = new Scanner(System.in);
+		        int n = sc.nextInt(0);
+		        int i = 0;
+		        int ans = 0;
+		        while(n != 0){
+		            int rem = n %10;
+		            ans += Math.pow(2,i++) * rem;
+		            n/=10;
+		        }
+		        System.out.println(ans);
+	}	
+
+}

@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Mar 10, 2021
+ * Time : 1:02:14 PM
+ */
+public class MaximumSumPath {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

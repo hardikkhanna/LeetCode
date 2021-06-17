@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 13-Jun-2021 Time : 8:34:08 am
+ */
+public class WeekylyContest244 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] removables = get1DArray();
+		String s = sc.next();
+		String p = sc.next();
+		int ans = maximumRemovables(s, p, removables);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param s
+	 * @param p
+	 * @param removables
+	 * @return
+	 */
+	private static int maximumRemovables(String s, String p, int[] removable) {
+		char[] ch = s.toCharArray();
+		StringBuilder builder = new StringBuilder(s);
+		int ans = 0;
+		for (int i : removable) {
+			builder.setCharAt(i, '1');
+			if (isSubsequence(builder, p)) {
+				ans++;
+			} else {
+				break;
+			}
+		}
+		return ans;
+	}
+
+	private static boolean isSubsequence(StringBuilder str, String p) {
+		return str.contains(p);
+	}
+
+}

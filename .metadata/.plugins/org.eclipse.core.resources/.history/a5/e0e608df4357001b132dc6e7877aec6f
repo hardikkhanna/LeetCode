@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 15, 2021
+ * Time : 8:40:27 PM
+ */
+public class SumRootToLeaf {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

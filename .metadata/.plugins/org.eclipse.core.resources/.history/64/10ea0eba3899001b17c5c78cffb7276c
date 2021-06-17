@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author Hardik
+ *
+ * Date : 09-Apr-2021
+ * Time : 7:05:15 pm
+ */
+public class PathSumRootTok {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinaryTreeNode<Integer> root = BinaryTreeUse.takeInputLevelWise();
+		int k = sc
+
+	}
+
+}

@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author Hardik
+ *
+ * 4:11:30 PM
+ */
+public class ShuffleArray {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}

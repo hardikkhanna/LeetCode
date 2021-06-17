@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.HashMap;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 14, 2021 Time : 11:58:46 AM
+ */
+public class MinimumCostToMoveChips extends ScannerInput {
+
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] position = get1DArray();
+		int ans = minCostToMoveChips(position);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param position
+	 * @return
+	 */
+	private static int minCostToMoveChips(int[] position) {
+		HashMap<Integer,Integer> map = new HashMap<>();
+		
+		return 0;
+	}
+
+}

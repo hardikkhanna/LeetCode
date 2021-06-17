@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 13, 2021 Time : 6:28:44 PM
+ */
+
+public class Outer {
+	public static void main(String[] args) {
+		FileOutputStream out = null;
+        try 
+        {
+            out = new FileOutputStream("output.out");
+            out.write(125486);
+        }
+        catch(IOException io) 
+        {
+            System.out.println("Error");
+        }
+        finally 
+        {
+            out.close();
+        }
+	}
+}

@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 6, 2021 Time : 1:28:21 PM
+ */
+public class PalindromeLinkedList extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode head = scannerInput();
+		Boolean ans = isPanlindrome(head.next);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param head
+	 * @return
+	 */
+	private static Boolean isPanlindrome(ListNode head) {
+		ListNode temp = head;
+		ListNode newHead = null;
+		while (temp != null) {
+			ListNode next = temp.next;
+			temp.next = newHead;
+			newHead = temp;
+			temp = next;
+		}
+		while(newHead != null) {
+			if(head.val != newHead.val) {
+				return false;
+			}
+			newHead = newHead.next;
+			head = head.next;
+		}
+		return true;
+	}
+
+}

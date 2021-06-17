@@ -1,0 +1,86 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 12-Jun-2021 Time : 9:05:25 pm
+ */
+public class BiWeekly5202 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[][] arr = get2DArray();
+		int ans = largestMagicSquare(arr);
+		System.out.println(ans);
+	}
+
+	/**
+	 * @param arr
+	 * @return
+	 */
+	private static int largestMagicSquare(int[][] grid) {
+		int max = 1;
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[i].length; j++) {
+
+				if (isMagicSquare(grid, i, j, i + j, i + j)) {
+					max = Math.max(max, j - 1);
+				}
+
+			}
+		}
+
+		return max;
+	}
+
+	static boolean isMagicSquare(int mat[][], int startRow, int startCol, int endRow, int endColumn)
+    {
+         for(int i = startRow; i <= endRow; i++){
+             for(int j = startCol; j <= endColumn; j++){
+                 System.out.print(mat[i][j] + " ");
+             }
+             System.out.println();
+         }
+        // sumd1 and sumd2 are the sum of the two diagonals
+        
+ 
+ 
+        return true;
+    }
+    boolean func(int mat[][], int startRow, int startCol, int endRow, int endColumn){
+        int sumd1 = 0,sumd2=0;
+        for (int i = startRow; i < startRow; i++)
+        {
+            // (i, i) is the diagonal from top-left -> bottom-right
+               // (i, N - i - 1) is the diagonal from top-right -> bottom-left
+            sumd1 += mat[i][i];
+               sumd2 += mat[startRow][endColumn - i];
+        }
+    // if the two diagonal sums are unequal then it is not a magic square
+        if(sumd1!=sumd2)
+            return false;
+ 
+        // calculating sums of Rows and columns and checking if they are equal to each other,
+        // as well as equal to diagonal sum or not
+        for (int i = startRow; i < endRow; i++) {
+ 
+            int rowSum = 0, colSum = 0;
+            for (int j = startCol; j < endColumn; j++)
+            {
+                rowSum += mat[i][j];
+                colSum += mat[j][i];
+            }
+            if (rowSum != colSum || colSum != sumd1)
+                return false;
+        }
+        return true;
+    }
+
+}

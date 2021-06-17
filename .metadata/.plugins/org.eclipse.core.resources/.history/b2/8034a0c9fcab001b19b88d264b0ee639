@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package oops.concept;
+
+import java.util.Scanner;
+
+/**
+ * @author Hardik
+ *
+ *         Date : 15-Apr-2021 Time : 11:45:57 am
+ */
+public class Main {
+
+	/**
+	 * 
+	 */
+
+	{
+		System.out.println("Hello");
+	}
+
+	public Main() {
+		System.out.println("Constructor call");
+	}
+
+	public static void main(String[] args) {
+		String s1 = new String("pakaj");
+		String s2 = new String("PANKAJ");
+		System.out.println(s1 = s2);
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter bank name");
+//		String bankName = sc.next();
+//		System.out.println("Enter type of loan");
+//		String loanType = sc.next();
+//		// sc.next();
+//		AbstractFactory banFactory = FactoryCreator.getFactory("bank");
+//		Bank bank = banFactory.getBank(bankName);
+//		AbstractFactory loanFactory = FactoryCreator.getFactory("loan");
+//		Loan loan = loanFactory.getLoan(loanType);
+//
+//		System.out.println("Enter the rate of interest for " + bank.getName());
+//		Double rate = sc.nextDouble();
+//
+//		System.out.println("Enter loan amount you want ");
+//		Double amount = sc.nextDouble();
+//
+//		System.out.println("Enter the number of years");
+//		int years = sc.nextInt();
+//
+//		loan.getRate(rate);
+//		loan.calculateLoan(amount, years);
+//		sc.close();
+	}
+}

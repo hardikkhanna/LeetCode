@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 2, 2021
+ * Time : 8:51:08 AM
+ */
+public class NumbersWithEvenNumberOfDigits {
+
+}

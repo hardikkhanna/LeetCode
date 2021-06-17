@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 19, 2021 Time : 12:29:32 PM
+ */
+public class AddTwoNumbers extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode l1 = scannerInput();
+		ListNode l2 = scannerInput();
+		l1 = addTwoNumbers(l1, l2);
+		while (l1 != null) {
+			System.out.print(l1.val + " ");
+		}
+	}
+
+}

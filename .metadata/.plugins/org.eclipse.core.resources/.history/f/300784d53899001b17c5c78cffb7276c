@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author Hardik
+ *
+ *         Date : 09-Apr-2021 Time : 7:05:15 pm
+ */
+public class PathSumRootTok {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinaryTreeNode<Integer> root = BinaryTreeUse.takeInputLevelWise();
+		int k = sc.nextInt();
+		rootToLeafPathsSumToK(root, k);
+
+	}
+
+	/**
+	 * @param root
+	 * @param k
+	 */
+	private static void rootToLeafPathsSumToK(BinaryTreeNode<Integer> root, int k) {
+
+		return rootToLeafPathsSumToK(root, k, "", 0);
+
+	}
+
+	/**
+	 * @param root
+	 * @param k
+	 * @param string
+	 * @param i
+	 * @return
+	 */
+	private static Object rootToLeafPathsSumToK(BinaryTreeNode<Integer> root, int k, String string, int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

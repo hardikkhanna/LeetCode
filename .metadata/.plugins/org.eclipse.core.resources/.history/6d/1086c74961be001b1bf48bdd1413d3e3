@@ -1,0 +1,77 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.ArrayList;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 27-May-2021 Time : 1:32:12 am
+ */
+public class PartitionInKSubsets extends ScannerInput {
+
+	private static ArrayList<ArrayList<Integer>> ans;
+	private static ArrayList<ArrayList<Integer>> temp;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[] nums = get1DArray();
+		int k = sc.nextInt();
+		ArrayList<ArrayList<Integer>> arr = partiton(nums, k);
+		for (ArrayList<Integer> a : arr) {
+			System.out.println(a);
+		}
+	}
+
+	/**
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
+	private static ArrayList<ArrayList<Integer>> partiton(int[] nums, int k) {
+		if (k > nums.length)
+			return null;
+		ans = new ArrayList<>();
+		temp = new ArrayList<>();
+		parition(nums, k, 0);
+		return null;
+	}
+
+	/**
+	 * @param nums
+	 * @param k
+	 * @param i
+	 */
+	private static void parition(int[] nums, int k, int start) {
+
+		if(start == nums.length - 1) {
+			if(temp.size() == 3) {
+				for(ArrayList<Integer> l : temp) {
+					ans.add(l);
+				}
+			}
+			return;
+		}
+		
+		for(int i = start; i < nums.length; i++) {
+			if(temp.get(i).size() > 0) {
+				temp.get(i).add(nums[start]);
+				parition(nums, k, start);
+				temp.get(i).remove(temp.get(i).size() - 1);
+			}else {
+				temp.add(new ArrayList<Integer>());
+				temp.get(i).add(nums[start]);
+				parition(nums, k, start + 1);
+				temp.get(i).remove(temp.get(i).size() - 1);
+				break;
+			}
+		}
+		
+	}
+
+}

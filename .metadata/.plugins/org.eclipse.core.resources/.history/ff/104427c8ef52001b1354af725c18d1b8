@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 10, 2021
+ * Time : 8:25:26 AM
+ */
+public class DecodeXORArray {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

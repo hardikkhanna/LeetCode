@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 3, 2021
+ * Time : 12:48:08 PM
+ */
+public class MaximumProductOfTwoElementinArray {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

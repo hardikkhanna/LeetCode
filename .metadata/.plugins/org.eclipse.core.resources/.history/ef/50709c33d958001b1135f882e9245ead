@@ -1,0 +1,54 @@
+/**
+ * 
+ */
+package leetcode.sort.problems;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 8:49:08 PM
+ */
+public class MaximumUnitsOnTruck extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[][] boxTypes = get2DArray();
+		int truckSize = sc.nextInt();
+		int ans = maximumUnits(boxTypes, truckSize);
+		System.out.println(ans);
+		sc.close();
+
+	}
+
+	/**
+	 * @param boxTypes
+	 * @param truckSize
+	 * @return
+	 */
+	private static int maximumUnits(int[][] boxTypes, int truckSize) {
+//		int[] row = new int[boxTypes.length];
+//		int[] col = new int[boxTypes[0].length];
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for (int i = 0; i < boxTypes.length; i++) {
+			map.put(boxTypes[i][0], boxTypes[i][1]);
+		}
+		int count = 0;
+		while (count < truckSize) {
+			int max = Collections.max(map.keySet());
+			count += map.get(max);
+			map.remove(max);
+		}
+		return 0;
+	}
+
+}

@@ -1,0 +1,115 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 30-May-2021 Time : 6:11:17 pm
+ */
+public class MergeSort2DArray extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[][] matrix = get2DArray();
+		solve(matrix, 0, matrix.length);
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				System.out.print(matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+	/**
+	 * @param matrix
+	 */
+	public static void mergeSort(String[][] arr, String[][] temp, int leftStart, int rightEnd, int featureIndex) {
+		if (leftStart >= rightEnd) {
+			return;
+		}
+		int mid = (leftStart + rightEnd) / 2;
+		mergeSort(arr, temp, leftStart, mid, featureIndex);
+		mergeSort(arr, temp, mid + 1, rightEnd, featureIndex);
+		mergeHalves(arr, temp, leftStart, rightEnd, featureIndex);
+	}
+
+	/**
+	 * @param matrix
+	 * @param l
+	 * @param r
+	 */
+	private static void sortByRow(int[] arr, int l, int r, int m) {
+		int n1 = m - l + 1;
+		int n2 = r - m;
+
+		/* Create temp arrays */
+		int L[] = new int[n1];
+		int R[] = new int[n2];
+
+		/* Copy data to temp arrays */
+		for (int i = 0; i < n1; ++i)
+			L[i] = arr[l + i];
+		for (int j = 0; j < n2; ++j)
+			R[j] = arr[m + 1 + j];
+
+		/* Merge the temp arrays */
+
+		// Initial indexes of first and second subarrays
+		int i = 0, j = 0;
+
+		// Initial index of merged subarry array
+		int k = l;
+		while (i < n1 && j < n2) {
+			if (L[i] <= R[j]) {
+				arr[k] = L[i];
+				i++;
+			} else {
+				arr[k] = R[j];
+				j++;
+			}
+			k++;
+		}
+
+		/* Copy remaining elements of L[] if any */
+		while (i < n1) {
+			arr[k] = L[i];
+			i++;
+			k++;
+		}
+
+		/* Copy remaining elements of R[] if any */
+		while (j < n2) {
+			arr[k] = R[j];
+			j++;
+			k++;
+		}
+	}
+
+	/**
+	 * @param r
+	 * @param l
+	 * @param matrix
+	 */
+	private static void sortByColumn(int[][] a, int l, int r) {
+//		int[][] arr = new int[l][r]
+
+	}
+
+	/**
+	 * @param matrix
+	 */
+	private static void sortByRow(int[][] mat) {
+		int n = mat.length;
+		for (int i = 0; i < n; i++)
+			Arrays.sort(mat[i]);
+	}
+
+}

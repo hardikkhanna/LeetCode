@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 15, 2021 Time : 6:53:20 PM
+ */
+public class NaryTreePreorderTraversal extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = 
+
+	}
+
+}

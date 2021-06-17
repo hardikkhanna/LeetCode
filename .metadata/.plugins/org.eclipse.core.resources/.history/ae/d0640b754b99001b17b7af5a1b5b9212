@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 09-Apr-2021 Time : 9:16:06 pm
+ */
+public class PrintNodesAtDistanceKFromNode extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		int target = sc.nextInt();
+		int k = sc.nextInt();
+
+		printNodesAtDistanceK(root, target, k);
+	}
+
+	/**
+	 * @param root
+	 * @param k
+	 */
+	private static void printNodesAtDistanceK(BinaryTreeNode<Integer> root, int target, int k) {
+		printNodesAtKHelper(root, target, k);
+
+	}
+
+	/**
+	 * @param root
+	 * @param target
+	 * @param k
+	 */
+	private static int printNodesAtKHelper(BinaryTreeNode<Integer> root, int target, int k) {
+		return k;
+
+	}
+
+}

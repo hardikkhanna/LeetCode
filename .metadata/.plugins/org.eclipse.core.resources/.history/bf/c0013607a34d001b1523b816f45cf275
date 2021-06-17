@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 3, 2021 Time : 2:35:49 PM
+ */
+public class CountNumberOfConsistentStrings {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		str = interpret(str);
+		System.out.println(str);
+		sc.close();
+
+}

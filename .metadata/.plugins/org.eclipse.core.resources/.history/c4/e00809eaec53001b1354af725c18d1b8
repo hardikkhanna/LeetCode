@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 11, 2021 Time : 2:36:29 PM
+ */
+public class FlattenMutiLevelDoublyList extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ListNode head = scannerInput();
+		head = flatten(head);
+	}
+
+}

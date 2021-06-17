@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 13, 2021 Time : 5:02:45 PM
+ */
+public class HeightOfBinaryTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		int height = findHeight(root);
+		System.out.println(height);
+	}
+
+}

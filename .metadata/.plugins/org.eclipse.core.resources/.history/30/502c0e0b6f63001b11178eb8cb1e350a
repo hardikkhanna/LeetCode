@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 31, 2021 Time : 8:19:36 AM
+ */
+public class WeeklyContest226 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

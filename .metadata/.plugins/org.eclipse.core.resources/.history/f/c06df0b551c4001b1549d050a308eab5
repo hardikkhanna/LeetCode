@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package oops.concept;
+
+import java.util.ArrayList;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 03-Jun-2021 Time : 3:12:51 pm
+ */
+
+abstract class Pencil {
+	
+	Pencil(){
+		System.out.println("Syso");
+	}
+	void castSpell(String spell) {
+		System.out.println("spell");
+	}
+	
+	abstract void hello();
+}
+
+public class Sample extends Pencil{
+
+	public static void main(String[] args) {
+		Pencil p = new Sample();
+	}
+
+	@Override
+	void hello() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

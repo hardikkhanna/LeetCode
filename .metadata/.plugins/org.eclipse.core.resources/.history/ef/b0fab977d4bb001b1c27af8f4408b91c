@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 23-May-2021 Time : 8:02:58 pm
+ */
+public class ReachDestination {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int sx = 1;
+		int sy = 1;
+		int dx = 3;
+		int dy = 5;
+		Boolean ans = reachDestination(sx, sy, dx, dy);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param sx
+	 * @param sy
+	 * @param dx
+	 * @param dy
+	 * @return
+	 */
+	private static Boolean reachDestination(int sx, int sy, int dx, int dy) {
+		if (sx == dx && sy == dy)
+			return true;
+		if (sx >= dx || sy >= dy)
+			return false;
+
+		Boolean ans = false;
+		ans = reachDestination(sx + sy, sy, dx, dy);
+		if (!ans) {
+			sx = sx - sy;
+			ans = reachDestination(sx, sx + sy, dx, dy);
+			if (!ans) {
+				sy = sy - sx;
+			}
+		}
+		return ans;
+	}
+
+}

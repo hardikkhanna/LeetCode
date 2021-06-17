@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 09-Apr-2021 Time : 4:23:13 pm
+ */
+public class ShortestPath {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+
+		String[] str = new String[n];
+		for (int i = 0; i < str.length; i++) {
+			str[i] = sc.nextLine();
+		}
+
+	}
+
+}

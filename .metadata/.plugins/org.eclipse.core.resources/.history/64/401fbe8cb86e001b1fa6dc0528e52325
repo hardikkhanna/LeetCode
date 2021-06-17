@@ -1,0 +1,71 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.ArrayList;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 14, 2021 Time : 4:40:54 PM
+ */
+public class Map<K, V> {
+
+	ArrayList<MapNode<K, V>> bucketList;
+	int size;
+	int numBuckets;
+
+	public Map(K key, V value) {
+		numBuckets = 20;
+		bucketList = new ArrayList<MapNode<K, V>>();
+		for (int i = 0; i < 20; i++) {
+			bucketList.add(null);
+		}
+	}
+
+	public void insert(K key, V value) {
+		int bucketIndex = getBucketIndex(key);
+		MapNode<K, V> head = bucketList.get(bucketIndex);
+		while (head != null) {
+			if (head.key.equals(key)) {
+				head.value = value;
+				return;
+			}
+			head = head.next;
+		}
+		head = bucketList.get(bucketIndex);
+		MapNode<K, V> newElement = new MapNode<K, V>(key, value);
+		size++;
+		newElement.next = head;
+		bucketList.set(bucketIndex, newElement);
+		double loadFactor = (1.0 * size) / numBuckets;
+		if (loadFactor > 0.7) {
+			rehash();
+		}
+
+	}
+
+	/**
+	 * 
+	 */
+	private void rehash() {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
+	 * @param key
+	 * @return
+	 */
+	private int getBucketIndex(K key) {
+		int hashcode = key.hashCode();
+		return hashcode % numBuckets;
+	}
+
+	public K removeKey(K key) {
+		int bucketIndex = getBucketIndex(key);
+
+	}
+
+}

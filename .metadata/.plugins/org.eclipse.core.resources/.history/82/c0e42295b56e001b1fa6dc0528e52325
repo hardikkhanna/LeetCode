@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.ArrayList;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 14, 2021 Time : 4:40:54 PM
+ */
+public class Map<K, V> {
+
+	ArrayList<MapNode<K, V>> bucketList;
+	int size;
+	int numBuckets;
+
+}

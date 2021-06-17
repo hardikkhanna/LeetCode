@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 16, 2021
+ * Time : 5:16:56 PM
+ */
+public class LeafSimilarValues {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

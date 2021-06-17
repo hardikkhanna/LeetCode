@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 10-Apr-2021 Time : 5:14:04 pm
+ */
+public class MorrisInorderTraversal extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

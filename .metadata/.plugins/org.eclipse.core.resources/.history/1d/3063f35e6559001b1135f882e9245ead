@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 18, 2021 Time : 1:42:32 PM
+ */
+public class CreateBinaryTreeFromInorderPreOrder extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] inorder = get1DArray();
+		int[] preorder = get1DArray();
+		BinaryTreeNode<Integer> root = createTree(inorder, preorder);
+		new BinaryTreeUse();
+		BinaryTreeUse.printTreeLevelWise(root);
+
+	}
+
+}

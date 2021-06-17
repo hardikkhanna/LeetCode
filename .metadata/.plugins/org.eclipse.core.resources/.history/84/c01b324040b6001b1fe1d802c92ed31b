@@ -1,0 +1,72 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 16-May-2021 Time : 5:33:42 pm
+ */
+public class MatchSpecificPattern {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while (t-- > 0) {
+			int n = sc.nextInt();
+			List<String> words = new ArrayList<String>();
+			while (n-- > 0)
+				words.add(sc.next());
+			String pattern = sc.next();
+			List<String> ans = matchSpecificPattern(words, pattern, n);
+			System.out.println(ans);
+		}
+
+		sc.close();
+
+	}
+
+	/**
+	 * @param words
+	 * @param pattern
+	 * @param n
+	 * @return
+	 */
+	private static List<String> matchSpecificPattern(List<String> words, String pattern, int length) {
+		if (words == null || words.size() == 0) {
+			return null;
+		}
+
+		List<String> ans = new ArrayList<String>();
+		for (String str : words) {
+			if (isValid(str, pattern)) {
+				ans.add(str);
+			}
+		}
+		return ans;
+	}
+
+	private static boolean isValid(String str, String pattern) {
+		if (str.length() != pattern.length())
+			return false;
+		HashMap<Character, Character> map = new HashMap<>();
+		for (int i = 0; i < pattern.length(); i++) {
+			if (!map.containsKey(pattern.charAt(i))) {
+				map.put(pattern.charAt(i), str.charAt(i));
+			} else if (map.get(pattern.charAt(i)) != str.charAt(i)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+}

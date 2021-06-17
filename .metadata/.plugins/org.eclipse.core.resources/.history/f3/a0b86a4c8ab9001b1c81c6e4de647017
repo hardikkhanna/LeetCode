@@ -1,0 +1,41 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 20-May-2021 Time : 9:34:41 pm
+ */
+public class FruitsAndBaskets {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while (t-- > 0) {
+			int n = sc.nextInt();
+			String str = sc.next();
+			int ans = maximumFruits(str, n);
+			System.out.println(ans);
+		}
+
+	}
+
+	/**
+	 * @param str
+	 * @param n
+	 * @return
+	 */
+	private static int maximumFruits(String str, int n) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 29, 2021 Time : 11:46:37 AM
+ */
+
+class A {
+	public static void sound() {
+		System.out.println("Meow");
+	}
+}
+
+public class B extends A {
+
+	/**
+	 * @param args
+	 */
+
+	public static void sound() {
+		System.out.println("Roar");
+	}
+
+	public static final String pig = "length: 10";
+	public static final String dog = "length:" + pig.length();
+
+	public static void main(String[] args) {
+		BigInteger fiveThousand = new BigInteger("5000");
+		BigInteger fiftyThousand = new BigInteger("50000");
+		BigInteger fiveHundredThousand = new BigInteger("500000");
+		BigInteger total = BigInteger.ZERO;
+		total.add(fiveThousand);
+		total.add(fiftyThousand);
+		total.add(fiveHundredThousand);
+		System.out.println(total);
+	}
+
+}

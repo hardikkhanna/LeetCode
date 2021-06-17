@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 4, 2021
+ * Time : 10:43:48 AM
+ */
+public class DeleteNodeInLinkedList {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,65 @@
+/**
+ * 
+ */
+package leetcode.stack.problems;
+
+import leetcode.binarytrees.problems.QueueEmptyException;
+import leetcode.linkedlist.prolems.ListNode;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Apr 4, 2021 Time : 10:19:36 AM
+ */
+public class QueueUsingLinkedList {
+
+	private ListNode front;
+	private ListNode rear;
+	private int size;
+
+	/**
+	 * 
+	 */
+	public QueueUsingLinkedList() {
+		front = null;
+		rear = null;
+		size = 0;
+	}
+
+	public int size() {
+		return size;
+	}
+
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
+	public int front() throws QueueEmptyException {
+		if (front == null) {
+			throw new QueueEmptyException();
+		}
+		return front.val;
+	}
+
+	public void enqueue(int element) {
+		if (rear == null) {
+			rear = new ListNode(element);
+			front = rear;
+			return;
+		}
+		rear.next = new ListNode(element);
+		rear = rear.next;
+		size++;
+	}
+
+	public void dequeue() {
+		if (front == null) {
+			throw new QueueEmptyException();
+		}
+		int val = front.val;
+		front = front.next;
+		size--;
+		return val;
+	}
+
+}

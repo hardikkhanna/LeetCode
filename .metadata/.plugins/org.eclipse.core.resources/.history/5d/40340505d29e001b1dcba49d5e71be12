@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 16-Apr-2021
+ * Time : 10:06:30 pm
+ */
+public class RemoveDuplicatesInUnsortedList {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

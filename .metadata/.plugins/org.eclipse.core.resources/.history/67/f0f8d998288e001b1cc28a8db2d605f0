@@ -1,0 +1,60 @@
+/**
+ * 
+ */
+package oops.concepts;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Mar 26, 2021 Time : 5:12:16 PM
+ */
+public class JusPay {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(Sytem.in);
+		int testCases = sc.nextInt();
+		for (int i = 0; i < testCases; i++) {
+			int numBlocks = sc.nextInt();
+			int array[] = new int[numBlocks];
+			for (int i = 0; i < numBlocks; i++) {
+				array[i] = sc.nextInt();
+			}
+			System.out.println(solution(array));
+		}
+	}
+
+	/**
+	 * @param array
+	 * @return
+	 */
+	private static int solution(int[] arr) {
+		ArrayList<Integer> sum = new ArrayList<>();
+		for (int i = 0; i < arr.length; i++) {
+			ArrayList<Integer> path = new ArrayList<>();
+			int j = i;
+			int tempSum = 0;
+			while (arr[j] < arr.length && arr[j] != i && arr[j] != -1 && !path.contains(j)) {
+				path.add(j);
+				tempSum += j;
+				j = arr[j];
+				if (arr[j] == i) {
+					tempSum += j;
+					break;
+				}
+			}
+			if (j < arr.length && i == arr[j])
+				sum.add(tempSum);
+		}
+		if (sum.isEmpty())
+			return -1;
+		return Collections.max(sum);
+	}
+
+}

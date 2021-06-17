@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package leetcode.dp.problems.easy;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 09-Jun-2021
+ * Time : 4:39:32 pm
+ */
+public class JumpGameVI extends ScannerInput{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 17-May-2021
+ * Time : 2:29:51 pm
+ */
+public class NextSmallestPalindrome {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

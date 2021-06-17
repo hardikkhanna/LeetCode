@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package leetcode.stack.problems;
+
+import java.util.Stack;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Apr 4, 2021 Time : 10:53:08 AM
+ */
+public class QueueUsingTwoStacks {
+
+	private Stack<T> s1;
+	private Stack<T> s2;
+
+	/**
+	 * 
+	 */
+	public QueueUsingTwoStacks() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 2, 2021 Time : 8:20:18 PM
+ */
+public class CellsWithOddValuesInMatrix {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		int row = sc.nextInt();
+		int col = sc.nextInt();
+		int[][] indices = new int[row][col];
+		int ans = oddCells(indices, n, m);
+		System.out.println(ans);
+		sc.close();
+
+	}
+
+	/**
+	 * @param arr
+	 * @param m
+	 * @param num
+	 * @return
+	 */
+	private static int oddCells(int[][] arr, int m, int num) {
+		int[][] arr = new int[n][m];
+		int oddCount = 0;
+		return oddCount;
+	}
+
+}

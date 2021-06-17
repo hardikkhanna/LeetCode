@@ -1,0 +1,86 @@
+/**
+ * 
+ */
+package leetcode.dp.problems.easy;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 09-Jun-2021 Time : 12:36:17 pm
+ */
+public class SpecialNumbersHackerearth {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int number = sc.nextInt();
+		int increasingCost = sc.nextInt();
+		int decreasingCost = sc.nextInt();
+		long ans = SpecialNumbers(number, increasingCost, decreasingCost);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param number
+	 * @param increasingCost
+	 * @param decreasingCost
+	 * @return
+	 */
+	private static long SpecialNumbers(int number, int increasingCost, int decreasingCost) {
+		Map<Integer, Integer> st = new HashMap<Integer, Integer>();
+		fillPrime(st, number * 2);
+
+		int opt1 = getIncreasingCost(st, number) * increasingCost;
+		int opt2 = getDecreasingCost(st, number) * decreasingCost;
+		return Math.min(opt1, opt2);
+	}
+
+	/**
+	 * @param st
+	 * @param number
+	 * @return
+	 */
+	private static int getDecreasingCost(Set<Integer> st, int number) {
+		return 0;
+	}
+
+	/**
+	 * @param st
+	 * @param number
+	 * @return
+	 */
+	private static int getIncreasingCost(Set<Integer> st, int number) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/**
+	 * @param st
+	 * @param number
+	 */
+	private static void fillPrime(Set<Integer> st, int n) {
+		boolean[] isPrime = new boolean[n + 1];
+		for (int i = 0; i <= n; i++) {
+			isPrime[i] = true;
+		}
+
+		for (int i = 3; i <= n; i++) {
+			if (isPrime[i]) {
+				for (int j = i * i; j <= n; j += i) {
+					isPrime[j] = false;
+				}	
+				st.add(i);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.HashMap;
+import java.util.List;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 18-Apr-2021 Time : 8:30:40 am
+ */
+public class WeeklyContest237 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[][] tasks = get2DArray();
+		int[] ans = getOrder(tasks);
+		for (int i = 0; i < ans.length; i++) {
+			System.out.print(ans[i] + " ");
+		}
+	}
+
+	/**
+	 * @param tasks
+	 * @return
+	 */
+	private static int[] getOrder(int[][] tasks) {
+		int[] ans = new int[tasks.length];
+		HashMap<Integer, List<Integer>> map = new HashMap<>();
+		for (int i = 0; i < tasks.length; i++) {
+
+		}
+
+		return null;
+	}
+
+}

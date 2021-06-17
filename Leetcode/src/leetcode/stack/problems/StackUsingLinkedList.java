@@ -48,7 +48,7 @@ public class StackUsingLinkedList {
 		}
 	}
 
-	public int pop() throws StackEmptyException {
+	public int pop() throws StackEmptyException  {
 		if (head == null) {
 			throw new StackEmptyException();
 		}
@@ -56,4 +56,19 @@ public class StackUsingLinkedList {
 		head = head.next;
 		return val;
 	}
+
+	public void print() {
+		if (head == null) {
+			System.out.println("Stack is empty");
+			return;
+		}
+		ListNode temp = head;
+		while (temp != null) {
+			System.out.print(temp.val + " ");
+			temp = temp.next;
+		}
+	}
+
+	
+	
 }

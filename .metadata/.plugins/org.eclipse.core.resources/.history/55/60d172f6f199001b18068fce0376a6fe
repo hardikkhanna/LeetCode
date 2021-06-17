@@ -1,0 +1,98 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 09-Apr-2021 Time : 9:16:06 pm
+ */
+public class PrintNodesAtDistanceKFromNode extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		int target = sc.nextInt();
+		int k = sc.nextInt();
+
+		printNodesAtDistanceK(root, target, k);
+		sc.close();
+	}
+
+	/**
+	 * @param root
+	 * @param k
+	 */
+	private static void printNodesAtDistanceK(BinaryTreeNode<Integer> root, int target, int k) {
+		printNodesAtKHelper(root, target, k);
+
+	}
+
+	/**
+	 * @param root
+	 * @param target
+	 * @param k
+	 */
+	private static int printNodesAtKHelper(BinaryTreeNode<Integer> root, int target, int k) {
+
+		if (root == null)
+			return -1;
+
+		if (root.data == target) {
+			printNodesAtDepthK(root, k);
+			return 0;
+		}
+
+		int leftDepth = printNodesAtKHelper(root.left, target, k);
+		if (leftDepth != -1) {
+
+			// If root is at distance k from target, print root
+			// Note that dl is Distance of root's left child from
+			// target
+			if (leftDepth + 1 == k) {
+				System.out.println(root.data);
+			} else {
+				// Else go to right subtree and print all k-dl-2 distant nodes
+				// Note that the right child is 2 edges away from left child
+				printNodesAtDepthK(root.right, k - (leftDepth + 1) - 1);
+			}
+			return 1 + leftDepth;
+		}
+
+		int rightDepth = printNodesAtKHelper(root.right, target, k);
+		if (rightDepth != -1) {
+			if (rightDepth + 1 == k) {
+				System.out.println(root.data);
+			} else {
+				printNodesAtDepthK(root.left, k - (rightDepth + 1) - 1);
+			}
+			return 1 + rightDepth;
+		}
+		return -1;
+
+	}
+
+	/**
+	 * @param root
+	 * @param k
+	 */
+	private static void printNodesAtDepthK(BinaryTreeNode<Integer> root, int k) {
+
+		if (root == null)
+			return;
+
+		if (k == 0) {
+			System.out.println(root.data);
+		}
+
+		printNodesAtDepthK(root.left, k - 1);
+		printNodesAtDepthK(root.right, k - 1);
+
+	}
+}

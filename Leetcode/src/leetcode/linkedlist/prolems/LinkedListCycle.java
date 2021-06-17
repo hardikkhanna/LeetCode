@@ -20,8 +20,9 @@ public class LinkedListCycle extends ScannerInput {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		
+		ListNode list = scannerInput();
+		Boolean ans = hasCycle(list);
+		System.out.println(ans);
 	}
 
 	/**

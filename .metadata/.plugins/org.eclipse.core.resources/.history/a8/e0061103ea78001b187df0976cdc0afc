@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 26, 2021 Time : 12:41:43 PM
+ */
+public class Pattern {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int i = 0;
+		while (i < n) {
+			if ((3 * i + 2) % 4 != 0) {
+				System.out.print(3 * i + 2 + " ");
+				i++;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,64 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 13-Jun-2021 Time : 8:34:08 am
+ */
+public class WeekylyContest244 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] removables = { 18, 1, 3, 7, 4, 16, 14, 2, 15, 0, 6, 12, 17, 11, 13, 5, 9 };
+		String s = sc.next();
+		String p = sc.next();
+		int ans = maximumRemovables(s, p, removables);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param s
+	 * @param p
+	 * @param removables
+	 * @return
+	 */
+	private static int maximumRemovables(String s, String p, int[] removable) {
+		char[] ch = s.toCharArray();
+		StringBuilder builder = new StringBuilder(s);
+		int ans = 0;
+		for (int i : removable) {
+			builder.setCharAt(i, '1');
+			if (isSubsequence(builder, p)) {
+				ans++;
+			} else {
+				break;
+			}
+		}
+		return ans;
+	}
+
+	private static boolean isSubsequence(StringBuilder str, String p) {
+		int max = 0;
+		StringBuilder s = new StringBuilder(str);
+		for (char c : p.toCharArray()) {
+			int index = s.indexOf("" + c);
+			if (index < max)
+				return false;
+			max = index;
+			s.setCharAt(index, '1');
+		}
+		return true;
+	}
+
+}

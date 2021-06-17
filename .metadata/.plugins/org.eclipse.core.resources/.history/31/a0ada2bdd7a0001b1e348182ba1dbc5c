@@ -1,0 +1,157 @@
+package leetcode.linkedlist.prolems;
+
+class DoubleListNode {
+	int data;
+	DoubleListNode next;
+	DoubleListNode prev;
+
+	DoubleListNode(int data) {
+		this.data = data;
+	}
+}
+
+class FrontMiddleBackQueue {
+
+	private DoubleListNode head;
+	private DoubleListNode middle;
+	private DoubleListNode tail;
+	private int size;
+
+	public FrontMiddleBackQueue() {
+		head = null;
+		middle = null;
+		tail = null;
+		size = 0;
+	}
+
+	public void pushFront(int val) {
+		DoubleListNode curr = new DoubleListNode(val);
+		if (size == 0) {
+			head = curr;
+			middle = curr;
+			tail = curr;
+		} else {
+			curr.next = head;
+			head.prev = curr;
+			head = curr;
+			if ((size & 1) == 1) {
+				middle = middle.prev;
+			}
+		}
+		size++;
+	}
+
+	public void pushMiddle(int val) {
+		DoubleListNode curr = new DoubleListNode(val);
+		if (size == 0) {
+			head = null;
+			tail = null;
+			middle = null;
+		}else {
+			DoubleListNode prev, next;
+			if ((size & 1) == 0) {
+                prev = middle;
+                next = middle.next;
+            }else {
+            	 prev = middle.prev;
+                 next = middle;
+            }
+			
+			middle = new DoubleListNode(prev, val, next);
+            if (prev != null) {
+                prev.next = mid;
+            } else {
+                first = mid;
+            }
+            next.prev = mid;
+		}
+		size++;
+	}
+
+	public void pushBack(int val) {
+		DoubleListNode curr = new DoubleListNode(val);
+		if (size == 0) {
+			head = curr;
+			middle = curr;
+			tail = curr;
+			size++;
+		} else {
+			tail.next = curr;
+			curr.prev = tail;
+			tail = curr;
+			if (size % 2 == 0) {
+				middle = middle.next;
+			}
+		}
+		size++;
+	}
+
+	public int popFront() {
+		if (size == 0)
+			return -1;
+		size--;
+		if (size % 2 != 0) {
+			middle = middle.next;
+		}
+		if (head == null) {
+			tail = null;
+			middle = null;
+		}
+		int val = head.data;
+		head = head.next;
+		return val;
+	}
+
+	public int popMiddle() {
+		if (size == 0)
+			return -1;
+		int val = middle.data;
+		size--;
+		if (size % 2 == 0) {
+			middle = middle.next;
+		} else {
+			middle = middle.prev;
+		}
+		if (middle == null) {
+			head = null;
+			tail = null;
+		}
+		return val;
+	}
+
+	public int popBack() {
+		if (size == 0)
+			return -1;
+		int val = tail.data;
+		tail = tail.prev;
+		size--;
+		if (size % 2 == 0) {
+			middle = middle.next;
+		}
+		if (tail == null) {
+			middle = null;
+			head = null;
+		}
+		return val;
+	}
+	
+	public void print() {
+		DoubleListNode temp = head;
+		while(temp != null) {
+			System.out.print(temp.data + " ");
+			temp = temp.next;
+		}
+	}
+	
+	public int getMiddle() {
+		if(size == 0) return -1;
+		return middle.data;
+	}
+}
+
+/**
+ * Your FrontMiddleBackQueue object will be instantiated and called as such:
+ * FrontMiddleBackQueue obj = new FrontMiddleBackQueue(); obj.pushFront(val);
+ * obj.pushMiddle(val); obj.pushBack(val); int param_4 = obj.popFront(); int
+ * param_5 = obj.popMiddle(); int param_6 = obj.popBack();
+ */

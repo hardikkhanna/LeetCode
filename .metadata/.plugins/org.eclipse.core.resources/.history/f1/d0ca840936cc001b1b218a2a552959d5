@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.List;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 13-Jun-2021 Time : 4:24:59 pm
+ */
+public class PalindromePairs extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String[] words = get1DStringArray();
+		List<List<String>> ans = palindromePairs(words);
+		for (List<String> l : ans) {
+			System.out.print(l + " ");
+		}
+
+	}
+
+	/**
+	 * @param words
+	 * @return
+	 */
+	private static List<List<String>> palindromePairs(String[] words) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,6 @@
+1621756584204	Extract method 'checkAntiDiagonal'
+1621756661290	Extract method 'checkDiagonally'
+1621876023010	Delete element
+1621884775872	Extract method 'preComputeMap'
+1621950123453	Rename local variable 'i'
+1622217885806	Copy compilation unit

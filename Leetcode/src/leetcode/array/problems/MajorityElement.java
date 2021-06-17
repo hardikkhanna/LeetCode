@@ -20,8 +20,54 @@ public class MajorityElement extends ScannerInput {
 	 */
 	public static void main(String[] args) {
 		int[] nums = get1DArray();
-		List<Integer> list = majorityElement(nums);
-		list.forEach(i -> System.out.print(list.get(i) + " "));
+		// List<Integer> list = majorityElement(nums);
+		// list.forEach(i -> System.out.print(list.get(i) + " "));
+
+		int ans = findMajority(nums);
+		System.out.println(ans);
+	}
+
+	private static int findMajority(int[] nums) {
+
+		int cand = findCandidate(nums, nums.length);
+		if (isMajority(nums, cand, nums.length)) {
+			return cand;
+		} else {
+			return -1;
+		}
+	}
+
+	/**
+	 * @param nums
+	 * @param cand
+	 * @param length
+	 * @return
+	 */
+	private static boolean isMajority(int[] nums, int cand, int length) {
+		int count = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == cand)
+				count++;
+		}
+		if (count >= Math.floor(length / 2))
+			return true;
+		return false;
+	}
+
+	private static int findCandidate(int a[], int size) {
+		int maj_index = 0, count = 1;
+		int i;
+		for (i = 1; i < size; i++) {
+			if (a[maj_index] == a[i])
+				count++;
+			else
+				count--;
+			if (count == 0) {
+				maj_index = i;
+				count = 1;
+			}
+		}
+		return a[maj_index];
 	}
 
 	/**

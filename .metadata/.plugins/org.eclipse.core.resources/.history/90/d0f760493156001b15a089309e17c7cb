@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 11:50:54 AM
+ */
+public class HeightChecker extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int ans = heightChecker(arr);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param arr
+	 * @return
+	 */
+	private static int heightChecker(int[] heights) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

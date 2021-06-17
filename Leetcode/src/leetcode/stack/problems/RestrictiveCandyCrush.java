@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * @author NIPC-43
+ * @author Hardik
  *
  *         Date : Apr 3, 2021 Time : 3:46:04 PM
  */
@@ -25,6 +25,7 @@ public class RestrictiveCandyCrush {
 
 		String ans = reduced_String(k, str);
 		System.out.println(ans);
+		sc.close();
 	}
 
 	public static String reduced_String(int k, String s) {

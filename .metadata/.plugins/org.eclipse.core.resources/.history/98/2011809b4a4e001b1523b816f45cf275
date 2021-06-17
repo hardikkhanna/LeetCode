@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 4, 2021 Time : 10:27:13 AM
+ */
+public class MiddleOfLinkedList extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode head = scannerInput();
+		head = middleNode(head);
+		while(head.next!=null) {
+			System.out.print(head.val + " ");
+		}
+	}
+
+	/**
+	 * @param head
+	 * @return
+	 */
+	private static ListNode middleNode(ListNode head) {
+		int count = 0;
+		ListNode temp = head;
+		while (temp.next != null) {
+			count++;
+			temp = temp.next;
+		}
+		temp = head;
+		count = count/2;
+		ListNode ans = new ListNode();
+		while (temp.next != null) {
+			if (count-- != 0) {
+				temp = temp.next;
+				continue;
+			}
+			ans.next = temp;
+			break;
+		}
+		return ans;
+	}
+
+}

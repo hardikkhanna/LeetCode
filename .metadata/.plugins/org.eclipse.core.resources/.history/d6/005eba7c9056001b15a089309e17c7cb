@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 14, 2021
+ * Time : 11:15:07 PM
+ */
+public class SearchBST {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

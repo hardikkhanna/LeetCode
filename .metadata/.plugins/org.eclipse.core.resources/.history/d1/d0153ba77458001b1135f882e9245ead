@@ -1,0 +1,62 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 8:25:06 AM
+ */
+public class TupleWithSampleProduct extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int ans = tupleSameProduct(arr);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param arr
+	 * @return
+	 */
+	private static int tupleSameProduct(int[] arr) {
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				String key = String.valueOf(arr[i]) + "," + String.valueOf(arr[j]);
+				boolean flag = false;
+				for (String k : map.keySet()) {
+					if (k.contains(String.valueOf(arr[i])) || k.contains(String.valueOf(arr[j]))) {
+						flag = true;
+					}
+				}
+				if (map.containsKey(key) && !flag)
+					map.put(key, map.get(key) + 1);
+				else
+					map.put(key, 1);
+
+			}
+		}
+		int count = 0;
+		map = map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors
+				.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+		for (String i : map.keySet()) {
+			if (map.get(i) == 2) {
+				count += (map.get(i) - 1) * 8;
+			} else if (map.get(i) > 2) {
+				count += (map.get(i)) * 8;
+			}
+		}
+		return count;
+	}
+
+}

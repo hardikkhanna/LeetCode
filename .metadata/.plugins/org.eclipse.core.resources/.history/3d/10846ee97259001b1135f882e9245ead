@@ -1,0 +1,60 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 18, 2021 Time : 3:17:03 PM
+ */
+public class CreateTreeFromInrorderAndPostorder extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] inorder = get1DArray();
+		int[] postorder = get1DArray();
+		BinaryTreeNode<Integer> root = getTreeFromPostorderAndInorder(inorder, postorder);
+		BinaryTreeUse.printTreeLevelWise(root);
+
+	}
+
+	/**
+	 * @param inorder
+	 * @param postorder
+	 * @return
+	 */
+	private static BinaryTreeNode<Integer> getTreeFromPostorderAndInorder(int[] inorder, int[] postorder) {
+		return getTreeFromPostorderAndInorder(inorder, postorder, 0, inorder.length - 1, 0, postorder.length - 1);
+	}
+
+	/**
+	 * @param inorder
+	 * @param postorder
+	 * @param i
+	 * @param j
+	 * @param k
+	 * @param l
+	 * @return
+	 */
+	private static BinaryTreeNode<Integer> getTreeFromPostorderAndInorder(int[] inorder, int[] postorder, int inS,
+			int inE, int postS, int postE) {
+		if(inS > inE)
+			return null;
+		int rootData = postorder[postE];
+		BinaryTreeNode<Integer> root  = new BinaryTreeNode<Integer>(rootData);
+		int rootIndex = -1;
+		for(int i =inS; i<=inE;i++) {
+			if(inorder[i] == rootData) {
+				rootIndex = i;
+				break
+			}
+		}
+		return null;
+	}
+
+}

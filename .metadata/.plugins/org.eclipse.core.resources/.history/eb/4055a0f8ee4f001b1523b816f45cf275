@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 6, 2021
+ * Time : 12:18:54 PM
+ */
+public class IntersectionOfTwoLinkedList extends ScannerInput{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode list1 = scannerInput();
+		ListNode list2 = scannerInput();
+		ListNode ans  = getIntersectionNode(list1.next,list2.next);
+		while(ans != null) {
+			System.out.print(ans.val + " ");
+			ans = ans.next;
+		}
+
+	}
+
+	/**
+	 * @param list1
+	 * @param list2
+	 * @return
+	 */
+	private static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+		ListNode temp = headB;
+        while(headA != null){      
+            headA = headA.next;
+            temp = headB;
+            while(temp!=null){
+                if(headA.val == temp.val){
+                    ListNode ans = new ListNode();
+                    ans.val = headA.val;
+                }
+                temp = temp.next;
+            }
+        }
+        return null;
+	}
+
+}

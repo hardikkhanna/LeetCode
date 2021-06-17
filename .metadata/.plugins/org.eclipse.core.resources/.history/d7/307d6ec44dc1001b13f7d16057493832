@@ -1,0 +1,87 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 30-May-2021 Time : 6:11:17 pm
+ */
+public class MergeSort2DArray extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[][] matrix = get2DArray();
+		solve(matrix,0,m);
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				System.out.print(matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+	/**
+	 * @param matrix
+	 */
+	private static void solve(int[][] matrix, int l, int r) {
+		
+		
+		
+		sortByColumn(matrix);
+		sortByRow(matrix);
+		
+	}
+
+	/**
+	 * @param matrix
+	 */
+	private static void sortByColumn(int[][] a) {
+		int m = a.length;
+		int n = a.length;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				for (int k = 0; k < m - 1 - j; k++) {
+					if (a[k][i] > a[k + 1][i]) {
+						int temp = a[k][i];
+						a[k][i] = a[k + 1][i];
+						a[k + 1][i] = temp;
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * @param matrix
+	 */
+	private static void transpose(int[][] mat) {
+		int n = mat.length;
+		for (int i = 0; i < n; i++) {
+			for (int j = i + 1; j < n; j++) {
+				int temp = mat[i][j];
+				mat[i][j] = mat[j][i];
+				mat[j][i] = temp;
+			}
+		}
+
+	}
+
+	/**
+	 * @param matrix
+	 */
+	private static void sortByRow(int[][] mat) {
+		int n = mat.length;
+		for (int i = 0; i < n; i++)
+			Arrays.sort(mat[i]);
+	}
+
+}

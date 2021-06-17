@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 17-Apr-2021
+ * Time : 10:59:18 am
+ */
+public class ReturnKthToLastElement extends ScannerInput{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode head = scannerInput();
+		int k = sc.nextInt();
+		int element = KthToLastNode(head,0,k);
+		System.out.println(element);
+
+	}
+
+	/**
+	 * @param head
+	 * @return
+	 */
+	private static int KthToLastNode(ListNode head) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

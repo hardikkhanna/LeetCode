@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 7, 2021 Time : 10:41:42 PM
+ */
+public class CountNumberOfTeams extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] rating = get1DArray();
+		int ans = numTeams(rating);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param rating
+	 * @return
+	 */
+	private static int numTeams(int[] rating) {
+		int count = 0;
+		for (int i = 0; i < rating.length - 2; i++) {
+			for (int j = i + 1; j < rating.length - 1; j++) {
+				if ((rating[i] < rating[j]) || (rating[i] > rating[j]))
+					for (int k = j + 1; k < rating.length; k++) {
+						if (((rating[i] < rating[j]) && (rating[j] < rating[k]))
+								|| ((rating[i] > rating[j]) && (rating[j] > rating[k]))) {
+							count++;
+						}
+					}
+			}
+		}
+		return count;
+	}
+
+}

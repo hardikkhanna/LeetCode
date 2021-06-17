@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 15, 2021 Time : 11:35:41 AM
+ */
+public class DiameterOfBinaryTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		root = findDiameter(root);
+		printTreeLevelWise(root);
+
+	}
+
+}

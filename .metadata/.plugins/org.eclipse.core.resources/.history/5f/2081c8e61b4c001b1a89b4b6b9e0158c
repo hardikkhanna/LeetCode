@@ -1,0 +1,9 @@
+package leetcode.array.problems;
+
+public class KidsWIthGreaterNumberofCandies {
+	
+	public static void main(String[] args) {
+
+	}
+
+}

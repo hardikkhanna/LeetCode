@@ -1,0 +1,60 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 2, 2021 Time : 8:16:42 AM
+ */
+public class CountGoodTriplets {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		int ans = countGoodTriplets(arr, a, b, c);
+		System.out.println(ans);
+		sc.close();
+
+	}
+
+	/**
+	 * @param arr
+	 * @param a
+	 * @param b
+	 * @param c
+	 * @return
+	 */
+	private static int countGoodTriplets(int[] arr, int a, int b, int c) {
+		int count = 0, k = 0;
+		for (int i = 0; i < arr.length - 3; i++) {
+			k = i + 1;
+			for (int j = i + 1; j < arr.length - 2;) {
+				k++;
+				if (Math.abs(arr[i] - arr[j]) <= a && Math.abs(arr[j] - arr[k]) <= b
+						&& Math.abs(arr[i] - arr[k]) <= c) {
+					count++;
+					//System.out.println("Triplet = (" + arr[i] + " " + arr[j] + " " + arr[k] + ")");
+				} else {
+					j++;
+					k = j;
+				}
+			}
+		}
+		return count;
+	}
+
+}

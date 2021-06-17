@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.HashMap;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 8:25:06 AM
+ */
+public class TupleWithSampleProduct extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int ans = tupleSameProduct(arr);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param arr
+	 * @return
+	 */
+	private static int tupleSameProduct(int[] arr) {
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				if (map.containsKey(arr[i] * arr[j]))
+					map.put(arr[i] * arr[j], map.get(arr[i] * arr[j]) + 1);
+				else
+					map.put(arr[i] * arr[j], 1);
+			}
+		}
+		int count = 0;
+		for (int i : map.keySet()) {
+			if (map.get(i) == 1) {
+				count++;
+			}
+		}
+		return (map.size() - count) * 8;
+	}
+
+}

@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 25-Apr-2021 Time : 6:31:11 pm
+ */
+public class SubTreeOfTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		Boolean ans = isSubTree(root);
+		System.out.println(ans);
+
+	}
+
+}

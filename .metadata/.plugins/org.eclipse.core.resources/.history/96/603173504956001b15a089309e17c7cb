@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.HashMap;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 2:44:32 PM
+ */
+public class CountTripletsToFormArraysOfEqualXOR extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int ans = countTriplets(arr);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param arr
+	 * @return
+	 */
+	private static int countTriplets(int[] arr) {
+		HashMap<Integer,Integer> map = new HashMap<>();
+		
+		return 0;
+	}
+
+}

@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 8:05:29 AM
+ */
+public class countGoodRectangles extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int ans = countrec(arr);
+		System.out.println(ans);
+
+	}
+
+}

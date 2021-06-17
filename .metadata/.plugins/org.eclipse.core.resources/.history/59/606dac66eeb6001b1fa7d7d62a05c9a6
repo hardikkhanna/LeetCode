@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 17-May-2021 Time : 2:29:51 pm
+ */
+public class NextSmallestPalindrome {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+
+		while (t-- > 0) {
+			String str = sc.next();
+			String ans = nextSmallestPlaindrome(str);
+			System.out.println(ans);
+		}
+
+	}
+
+}

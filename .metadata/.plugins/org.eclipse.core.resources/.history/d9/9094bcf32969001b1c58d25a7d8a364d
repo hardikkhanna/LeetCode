@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+//package leetcode.weeklycontest.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 7, 2021 Time : 1:08:52 PM
+ */
+class sample {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while (t-- > 0) {
+			int n = sc.nextInt();
+			int[] arr = new int[n];
+			for (int i = 0; i < arr.length; i++) {
+				arr[i] = sc.nextInt();
+			}
+			int smallest = arr[0];
+			int secondsmallest = smallest;
+			int largest = Integer.MIN_VALUE;
+			for (int i = 0; i < arr.length; i++) {
+				if (smallest > arr[i]) {
+					secondsmallest = smallest;
+					smallest = arr[i];
+				}
+				if (largest < arr[i]) {
+					largest = arr[i];
+				}
+			}
+			System.out.println(Math.abs(smallest - secondsmallest) + Math.abs(secondsmallest - largest)
+					+ Math.abs(largest - smallest));
+
+		}
+		sc.close();
+	}
+
+}

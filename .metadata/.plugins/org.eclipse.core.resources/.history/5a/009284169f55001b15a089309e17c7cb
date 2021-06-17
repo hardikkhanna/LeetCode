@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 13, 2021
+ * Time : 6:28:44 PM
+ */
+public class Outer extends Inner 
+{
+    public static void main(String [] args) 
+    {
+        Outer obj = new Inner();
+        obj.cnt();
+    }
+}
+protected class Inner
+{
+    void cnt() 
+    {
+        for (int x = 0;x<7;x++,x++ ) 
+        {
+            System.out.print(" " + x);
+        }
+    }
+}

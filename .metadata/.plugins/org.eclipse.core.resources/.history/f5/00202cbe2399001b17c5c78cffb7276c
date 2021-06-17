@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 09-Apr-2021 Time : 4:23:13 pm
+ */
+public class ShortestPath {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		if (n == 0)
+			return;
+		String s = sc.nextLine();
+		String first = s.substring(0, s.indexOf(" "));
+		String rootLeft = s.substring(s.indexOf(" ") + 1);
+		BinaryTreeNode<String> root = new BinaryTreeNode<String>();
+		root.left = new BinaryTreeNode<String>(rootLeft);
+		String[] str = new String[n];
+		for (int i = 0; i < str.length; i++) {
+			str[i] = sc.nextLine();
+		}
+
+	}
+
+}

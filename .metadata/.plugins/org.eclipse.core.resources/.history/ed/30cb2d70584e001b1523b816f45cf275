@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author Hardik
+ *
+ * Date : Jan 4, 2021
+ * Time : 12:13:52 PM
+ */
+public class MergeSortedArrays extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

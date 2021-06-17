@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 25-Apr-2021 Time : 8:46:39 am
+ */
+public class WeeklyContest238 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		int ans = longestBeautifulSubstring(str);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static int longestBeautifulSubstring(String str) {
+		// check for base case
+		if (str == null || str.length() <= 5)
+			return 0;
+
+		String vowelString = "aeiou";
+		int count = 5;
+
+		for (int i = 1; i < str.length(); i++) {
+
+		}
+
+		return 0;
+	}
+
+}

@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 3, 2021
+ * Time : 2:35:49 PM
+ */
+public class CountNumberOfConsistentStrings {
+
+}

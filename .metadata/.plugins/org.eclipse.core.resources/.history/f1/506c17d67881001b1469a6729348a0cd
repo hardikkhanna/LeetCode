@@ -1,0 +1,97 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Mar 10, 2021 Time : 1:02:14 PM
+ */
+public class MaximumSumPath extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] input1 = get1DArray();
+		int[] input2 = get1DArray();
+		int path = maximumSumPath(input1, input2);
+		System.out.println(path);
+
+	}
+
+	/**
+	 * @param input1
+	 * @param input2
+	 * @return
+	 */
+	private static int maximumSumPath(int[] input1, int[] input2) {
+		int i = 0, j = 0;
+		int m = input1.length;
+		int n = input2.length;
+
+		// Initialize result and current sum through input1[]
+		// and input2[].
+		int result = 0, sum1 = 0, sum2 = 0;
+
+		// Below 3 loops are similar to merge in merge sort
+		while (i < m && j < n) {
+			// Add elements of input1[] to sum1
+			if (input1[i] < input2[j])
+				sum1 += input1[i++];
+
+			// Add elements of input2[] to sum2
+			else if (input1[i] > input2[j])
+				sum2 += input2[j++];
+
+			// we reached a common point
+			else {
+				// Take the maximum of two sums and add to
+				// result
+				result += max(sum1, sum2);
+
+				// Update sum1 and sum2 for elements after
+				// this intersection point
+				sum1 = 0;
+				sum2 = 0;
+
+				// Keep updating result while there are more
+				// common elements
+				int temp = i;
+				while (i < m && input1[i] == input2[j])
+					sum1 += input1[i++];
+
+				while (j < n && input1[temp] == input2[j])
+					sum2 += input2[j++];
+
+				result += max(sum1, sum2);
+
+				sum1 = 0;
+				sum2 = 0;
+			}
+		}
+
+		// Add remaining elements of input1[]
+		while (i < m)
+			sum1 += input1[i++];
+
+		// Add remaining elements of input2[]
+		while (j < n)
+			sum2 += input2[j++];
+
+		// Add maximum of two sums of remaining elements
+		result += max(sum1, sum2);
+
+		return result;
+	}
+
+//	if (maxSum == 0) {
+//		s1= Arrays.stream(input1).sum();
+//		s2 = Arrays.stream(input2).sum();
+//		maxSum = Math.max(s1, s2);
+//	} else {
+
+}

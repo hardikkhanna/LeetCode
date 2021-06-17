@@ -1,0 +1,83 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.ArrayList;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 27-May-2021 Time : 2:32:56 am
+ */
+public class PartitionInKSubsetsOfEqualSum extends ScannerInput {
+
+	private static ArrayList<ArrayList<Integer>> temp;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[] nums = get1DArray();
+		int k = sc.nextInt();
+		Boolean ans = partiton(nums, k);
+		System.out.println(ans);
+	}
+
+	/**
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
+	private static boolean partiton(int[] nums, int k) {
+		if (k > nums.length)
+			return false;
+		temp = new ArrayList<>();
+		for (int i = 0; i < k; i++)
+			temp.add(new ArrayList<Integer>());
+		int[] subsetSum = new int[k];
+		return parition(nums, k, 0, 0, subsetSum);
+
+	}
+
+	/**
+	 * @param nums
+	 * @param k
+	 * @param i
+	 * @return
+	 */
+	private static boolean parition(int[] nums, int k, int start, int sub) {
+
+		if (start == nums.length) {
+			if (sub == k) {
+				int prev = temp.get(0).stream().mapToInt(Integer::intValue).sum();
+				for (ArrayList<Integer> l : temp) {
+					ArrayList<Integer> node = new ArrayList<Integer>(l);
+					int sum = node.stream().mapToInt(Integer::intValue).sum();
+					if (sum != prev)
+						return false;
+				}
+				return true;
+			}
+			return false;
+		}
+
+		Boolean ans = false;
+		for (int i = 0; i < k; i++) {
+			if (temp.get(i).size() > 0) {
+				temp.get(i).add(nums[start]);
+				ans = ans || parition(nums, k, start + 1, sub);
+				temp.get(i).remove(temp.get(i).size() - 1);
+			} else {
+				temp.get(i).add(nums[start]);
+				ans = ans || parition(nums, k, start + 1, sub + 1);
+				temp.get(i).remove(temp.get(i).size() - 1);
+				break;
+			}
+		}
+
+		return ans;
+	}
+
+}

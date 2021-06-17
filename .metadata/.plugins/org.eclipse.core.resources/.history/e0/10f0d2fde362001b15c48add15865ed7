@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package leetcode.stack.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 30, 2021 Time : 3:44:42 PM
+ */
+public class RemoveOuterMostParentheses {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

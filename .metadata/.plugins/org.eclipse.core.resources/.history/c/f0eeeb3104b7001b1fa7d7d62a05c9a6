@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 17-May-2021 Time : 4:48:01 pm
+ */
+public class CompareVersions {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String versionA = sc.next();
+		String versionB = sc.next();
+		int ans = compareVersion(versionA, versionB);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param versionA
+	 * @param versionB
+	 * @return
+	 */
+	private static int compareVersion(String a, String b) {
+		if (a.length() == 0 && b.length() == 0)
+			return 0;
+		
+		String[] str1 = a.split("\\.");
+		String[] str2 = b.split("\\.");
+		
+		int start = 0;
+		while(start < str1.length && start < str2.length) {
+			
+			int val1 = Integer.valueOf(str1[start]);
+			int val2 = Integer.valueOf(str2[start]);
+			
+			start++;
+		}
+		
+		return 0;
+	}
+
+}

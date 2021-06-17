@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package leetcode.math.probems;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 18, 2021 Time : 7:36:52 AM
+ */
+public class Maximum69Number {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		n = maximum69Number(n);
+		System.out.println(n);
+	}
+
+	/**
+	 * @param n
+	 * @return
+	 */
+	private static int maximum69Number(int num) {
+		// int[] arr = Integer.valueOf(String.valueOf(num).toCharArray());
+		char[] ch = String.valueOf(num).toCharArray();
+		Arrays.sort(ch);
+		String str = "";
+		for (int i = 0; i < ch.length - 2; i++) {
+			str += ch[i];
+		}
+		str += "69";
+		return Integer.valueOf(str);
+	}
+
+}

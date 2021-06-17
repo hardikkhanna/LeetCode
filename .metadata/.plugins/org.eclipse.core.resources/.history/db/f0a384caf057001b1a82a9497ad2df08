@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 16, 2021 Time : 5:16:56 PM
+ */
+public class LeafSimilarValues extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root1 = takeInputLevelWise();
+		BinaryTreeNode<Integer> root2 = takeInputLevelWise();
+		Boolean ans = leafSimilar(root1, root2);
+		System.out.println(ans);
+	}
+
+}

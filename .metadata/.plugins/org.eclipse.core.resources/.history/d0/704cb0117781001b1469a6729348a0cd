@@ -1,0 +1,81 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Mar 10, 2021 Time : 1:02:14 PM
+ */
+public class MaximumSumPath extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] input1 = get1DArray();
+		int[] input2 = get1DArray();
+		int path = maximumSumPath(input1, input2);
+		System.out.println(path);
+
+	}
+
+	/**
+	 * @param input1
+	 * @param input2
+	 * @return
+	 */
+	private static int maximumSumPath(int[] input1, int[] input2) {
+		if (input1.length == 0)
+			return input2.length;
+		if (input2.length == 0)
+			return input1.length;
+		int maxSum = 0;
+		int s1 = 0;
+		int s2 = 0;
+		int i = 0;
+		int j = 0;
+		while (i < input1.length && j < input2.length) {
+
+			if (input1[i] < input2[j]) {
+				s1 += input1[i];
+				i++;
+			} else if (input2[j] < input1[i]) {
+				s2 += input2[j];
+				j++;
+			} else {
+				s1 += input1[i];
+				s2 += input2[j];
+				maxSum += Math.max(s1, s2);
+				s1 = 0;
+				s2 = 0;
+				i++;
+				j++;
+			}
+		}
+		if (maxSum == 0) {
+			s1= Arrays.stream(input1).sum();
+			s2 = Arrays.stream(input2).sum();
+			maxSum = Math.max(s1, s2);
+		} else {
+		while (i < input1.length) {
+			maxSum += input1[i++];
+		}
+
+		while (j < input2.length) {
+			maxSum += input2[j++];
+		}
+
+		return maxSum;
+	}
+
+	
+	
+//	if (maxSum == 0) {
+//		s1= Arrays.stream(input1).sum();
+//		s2 = Arrays.stream(input2).sum();
+//		maxSum = Math.max(s1, s2);
+//	} else {
+	
+}

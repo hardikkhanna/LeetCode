@@ -1,0 +1,41 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 12-Jun-2021 Time : 3:44:54 pm
+ */
+public class Antiblot {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		System.out.println(antiblot(str));
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static static antiblot(String str) {
+		String ans = "";
+		int indexLeft = str.indexOf("+");
+		int indexRight = str.indexOf("=");
+		String left1 = str.substring(0, indexLeft);
+		String left2 = str.substring(indexLeft + 1, indexRight);
+		String right  = str.substring(indexRight + 1); 
+		System.out.println(left1 + " " + left2 + " " + left3);
+		return str.replace("inkblot", ans);
+	}
+
+}

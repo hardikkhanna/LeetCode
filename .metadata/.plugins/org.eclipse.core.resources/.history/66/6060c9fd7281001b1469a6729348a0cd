@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Mar 10, 2021 Time : 1:02:14 PM
+ */
+public class MaximumSumPath extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] input1 = get1DArray();
+		int[] input2 = get1DArray();
+		int path = maximumSumPath(input1, input2);
+		System.out.println(path);
+
+	}
+
+	/**
+	 * @param input1
+	 * @param input2
+	 * @return
+	 */
+	private static int maximumSumPath(int[] input1, int[] input2) {
+		
+		int sum = 0;
+		for(int i =0,j=0 ; i<input1.length;j<input2.length;i+;j++) {
+			
+		}
+		
+	}
+
+}

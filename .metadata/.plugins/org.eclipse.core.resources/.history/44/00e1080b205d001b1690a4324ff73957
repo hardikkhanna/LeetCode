@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 23, 2021
+ * Time : 7:39:01 AM
+ */
+public class DeterminStringsAreClose {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

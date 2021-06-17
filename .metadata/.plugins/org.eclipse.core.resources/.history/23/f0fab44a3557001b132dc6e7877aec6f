@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 15, 2021 Time : 6:53:20 PM
+ */
+public class NaryTreePreorderTraversal extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+
+	public List<Integer> list = new ArrayList<>();
+
+	public static List<Integer> preorder(BinaryTreeNode<Integer> root) {
+		if (root == null)
+			return list;
+
+		list.add(root.val);
+		for (Node node : root.children)
+			preorder(node);
+
+		return list;
+	}
+
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		List<Integer> list = preorder(root);
+		list.stream().forEach(i -> list.get(i));
+
+	}
+
+}

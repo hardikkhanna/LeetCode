@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 17-Jun-2021 Time : 1:17:15 am
+ */
+public class ShortestDistanceColor {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public List<Integer> shortestDistanceColor(int[] colors, int[][] queries) {
+		HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
+		for (int i = 0; i < colors.length; i++) {
+			if (map.containsKey(colors[i])) {
+				ArrayList<Integer> arr = map.get(colors[i]);
+				arr.add(i);
+				map.put(colors[i], arr);
+			} else {
+				ArrayList<Integer> arr = new ArrayList<Integer>();
+				arr.add(i);
+				map.put(colors[i], arr);
+			}
+		}
+		List<Integer> ans = new ArrayList<Integer>();
+		for (int[] arr : queries) {
+			int target = arr[0], color = arr[1];
+			if (!map.containsKey(arr[1])) {
+				ans.add(-1);
+			} else {
+				List<Integer> indexList = map.get(color);
+				int insert = Collections.binarySearch(indexList, target);
+
+				// due to its nature, we need to convert the returning values
+				// from Collections.binarySearch
+				// more details:
+				// https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Collections.html#binarySearch(java.util.List,T)
+				if (insert < 0) {
+					insert = (insert + 1) * -1;
+				}
+
+				// Handling cases when:
+				// - the target index is smaller than all elements in the indexList
+				// - the target index is larger than all elements in the indexList
+				// - the target index sits between the left and right boundaries
+				if (insert == 0) {
+					ans.add(indexList.get(insert) - target);
+				} else if (insert == indexList.size()) {
+					ans.add(target - indexList.get(insert - 1));
+				} else {
+					int leftNearest = target - indexList.get(insert - 1);
+					int rightNearest = indexList.get(insert) - target;
+					ans.add(Math.min(leftNearest, rightNearest));
+				}
+			}
+		}
+		return ans;
+	}
+
+}

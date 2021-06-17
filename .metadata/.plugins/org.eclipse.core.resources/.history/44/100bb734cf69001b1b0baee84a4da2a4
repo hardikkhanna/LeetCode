@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Feb 8, 2021 Time : 11:01:30 AM
+ */
+public class SecondMinimumInBinaryTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		int secondMin = findSecondMinimum(root);
+		System.out.println(secondMin);
+	}
+
+	/**
+	 * @param root
+	 * @return
+	 */
+	private static int findSecondMinimum(BinaryTreeNode<Integer> root) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

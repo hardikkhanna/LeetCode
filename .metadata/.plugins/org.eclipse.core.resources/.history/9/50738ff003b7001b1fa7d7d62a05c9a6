@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 17-May-2021 Time : 4:48:01 pm
+ */
+public class CompareVersions {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String versionA = sc.next();
+		String versionB = sc.next();
+		int ans = compareVersion(versionA, versionB);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param versionA
+	 * @param versionB
+	 * @return
+	 */
+	private static int compareVersion(String a, String b) {
+		if (a.length() == 0 && b.length() == 0)
+			return 0;
+
+		int versionA = 0;
+		int versionB = 0;
+		String[] str1 = a.split("\\.");
+		String[] str2 = b.split("\\.");
+		a = "0";
+		b = "0";
+		for (int i = 0; i < str1.length; i++) {
+			versionA = Integer.valueOf(str1[i]);
+			if (versionA > 0)
+				a += versionA;
+		}
+
+		for (int i = 0; i < str2.length; i++) {
+			versionB = Integer.valueOf(str2[i]);
+			if (versionB > 0)
+				b += versionB;
+		}
+		// System.out.println(a + " " + b);
+		versionA = Integer.valueOf(a);
+		versionB = Integer.valueOf(b);
+		if (versionA > versionB)
+			return 1;
+		if (versionA < versionB)
+			return -1;
+		return 0;
+	}
+
+}

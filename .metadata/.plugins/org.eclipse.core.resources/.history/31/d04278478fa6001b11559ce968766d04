@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+package oops.concept;
+
+import java.util.HashMap;
+
+/**
+ * @author Hardik
+ *
+ *         Date : 15-Apr-2021 Time : 11:45:57 am
+ */
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	static Main m = new Main();
+
+	/**
+	 * 
+	 */
+	
+	{
+		System.out.println("Hello");
+	}
+	public Main() {
+		System.out.println("Constructor call");
+	}
+
+	public static void main(String[] args)
+    {
+        HashMap<String,Integer> map = new HashMap<>();
+        map.put("abc", 1);
+        map.computeIfAbsent("abc", k -> getValue("abc"));
+        
+    }
+
+	/**
+	 * @param string
+	 * @return
+	 */
+	private static int getValue(String string) {
+		return string.length()
+	}
+
+}

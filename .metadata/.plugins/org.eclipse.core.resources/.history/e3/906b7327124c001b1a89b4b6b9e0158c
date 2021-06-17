@@ -1,0 +1,10 @@
+package leetcode.array.problems;
+
+public class RichestCustomerHealth {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

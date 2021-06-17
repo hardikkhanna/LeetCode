@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 8:04:19 AM
+ */
+public class SquaresOfSortedArray extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+
+	}
+
+}

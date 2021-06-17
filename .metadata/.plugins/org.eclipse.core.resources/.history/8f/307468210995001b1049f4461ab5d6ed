@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package leetcode.stack.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Apr 4, 2021
+ * Time : 11:06:46 AM
+ */
+public class StackUsingTwoQueues<E> {
+
+	private Queue<E>;
+	private 
+}

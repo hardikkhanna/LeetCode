@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 10, 2021 Time : 8:14:48 AM
+ */
+public class SwapNodesLikedList extends ScannerInput {
+
+	public static void main(String[] args) {
+		ListNode head = scannerInput();
+		int k = sc.nextInt();
+		head = getOutput(head, k);
+		while (head != null) {
+			System.out.print(head.val + " ");
+			head = head.next;
+		}
+	}
+
+	/**
+	 * @param head
+	 * @param k
+	 * @return
+	 */
+	private static ListNode getOutput(ListNode head, int k) {
+		ListNode temp = head;
+		int count = 0, i = 0;
+		ListNode temp1 = head;
+		while (temp != null) {
+			count++;
+			temp = temp.next;
+		}
+		temp = head;
+		while (i++ != k) {
+			temp = temp.next;
+		}
+		while (count-- != k) {
+			temp1 = temp1.next;
+		}
+		temp.val = temp1.val;
+		temp1.val = temp.val;
+		return head;
+	}
+
+}

@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 13, 2021
+ * Time : 4:37:03 PM
+ */
+public class RangeSumBST extends BinaryTreeUse{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		int ans = rangeSumBST(root,low,high);
+		System.out.println(ans);
+
+	}
+
+}

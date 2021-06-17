@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 26-May-2021 Time : 3:52:00 pm
+ */
+public class BinaryStringWithNoConsecutive1s {
+
+	static ArrayList<String> ans;
+	static StringBuilder sb;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		ArrayList<String> ans = generateString(n);
+		System.out.println(ans);
+
+	}
+
+	public static ArrayList<String> generateString(int K) {
+
+		ans = new ArrayList<>();
+		generateString(K, 0);
+		return ans;
+	}
+
+	private static void generateString(int target, int start) {
+		if (start >= target || (sb.length() > 1 && sb.charAt(sb.length() - 1) == sb.charAt(sb.length() - 2))) {
+			return;
+		}
+
+		if (start == target - 1) {
+			ans.add(sb.toString());
+			return;
+		}
+
+		sb.append("0");
+		generateString(target, start + 1);
+		sb.deleteCharAt(sb.length() - 1);
+		sb.append("1");
+		generateString(target, start + 1);
+		sb.deleteCharAt(sb.length() - 1);
+	}
+
+}

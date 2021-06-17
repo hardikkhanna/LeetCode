@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 3, 2021 Time : 12:25:06 PM
+ */
+public class NumberOfStudentsDoingHomework {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		sc.close();
+	}
+
+}

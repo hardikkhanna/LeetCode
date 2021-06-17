@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import javax.naming.BinaryRefAddr;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 16, 2021 Time : 4:59:26 PM
+ */
+public class IsUnivalTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = 
+
+	}
+
+}

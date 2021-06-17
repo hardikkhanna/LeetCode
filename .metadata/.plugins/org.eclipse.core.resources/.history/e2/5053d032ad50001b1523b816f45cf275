@@ -1,0 +1,54 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 7, 2021 Time : 11:08:46 AM
+ */
+public class MergeInBetweenLinkedList {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode head = null;
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		while (n-- > 0) {
+			head = insertNode(head, sc.nextInt());
+		}
+		while (head != null) {
+			System.out.print(head.val + "-> ");
+			head = head.next;
+		}
+		sc.close();
+	}
+
+	/**
+	 * @param head
+	 * @param nextInt
+	 * @return 
+	 */
+	private static ListNode insertNode(ListNode head, int nextInt) {
+		if (head == null) {
+			head = new ListNode();
+			head.val = nextInt;
+			head.next = null;
+			return head;
+		}
+		ListNode temp = new ListNode();
+		temp.val = nextInt;
+		temp.next = null;
+		while (head.next != null) {
+			head = head.next;
+		}
+		head.next = temp;
+		return head;
+	}
+
+}

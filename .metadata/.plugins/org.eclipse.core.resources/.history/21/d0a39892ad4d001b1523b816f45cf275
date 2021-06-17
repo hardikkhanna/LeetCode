@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 3, 2021 Time : 2:38:36 PM
+ */
+public class SplitStringInBalancedString {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		int ans = balancedStringSplit(str);
+		System.out.println(ans);
+		sc.close();
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static int balancedStringSplit(String str) {
+		int count = 0, length = 0;
+		for (int i = 1; i < str.length(); i++) {
+			if (str.charAt(i - 1) == str.charAt(i)) {
+				length++;
+			} else {
+				Boolean flag = true;
+				for (int j = 0; j < length; j++) {
+					if (str.charAt(i) != str.charAt(j)) {
+						flag = false;
+					}
+				}
+				length = 0;
+				if (flag)
+					count++;
+			//	i += length -1
+			}
+		}
+		return count;
+	}
+
+}

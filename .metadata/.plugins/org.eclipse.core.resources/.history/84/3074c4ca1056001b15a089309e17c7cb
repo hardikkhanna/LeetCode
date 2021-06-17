@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 8:01:50 AM
+ */
+public class ArrayPartitionI extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int ans = (arr);
+		System.out.println(ans);
+
+	}
+
+}

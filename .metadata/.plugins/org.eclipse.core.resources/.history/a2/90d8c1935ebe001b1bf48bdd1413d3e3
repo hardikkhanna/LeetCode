@@ -1,0 +1,41 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.ArrayList;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 27-May-2021 Time : 1:32:12 am
+ */
+public class PartitionInKSubsets extends ScannerInput {
+
+	private ArrayList<ArrayList<Integer>> ans;
+	private ArrayList<ArrayList<Integer>> temp;
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[] nums = get1DArray();
+		int k = sc.nextInt();
+		ArrayList<ArrayList<Integer>> arr = partiton(nums, k);
+		for (ArrayList<Integer> a : arr) {
+			System.out.println(a);
+		}
+	}
+
+	/**
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
+	private static ArrayList<ArrayList<Integer>> partiton(int[] nums, int k) {
+
+		ans = new ArrayList<>(); 
+		return null;
+	}
+
+}

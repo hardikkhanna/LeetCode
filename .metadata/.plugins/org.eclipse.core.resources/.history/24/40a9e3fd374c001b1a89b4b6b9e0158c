@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author Hardik
+ *
+ * 7:01:40 PM
+ */
+public class NumberOfGoodPairs {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] array = new int[n];
+		for (int i = 0; i < n; i++) {
+			array[i] = sc.nextInt();
+		}
+		int ans = numIdenticalPairs(array)
+		System.out.println(ans); 
+		sc.close();
+	}
+
+	/**
+	 * @param array
+	 * @return
+	 */
+	private static int numIdenticalPairs(int[] array) {
+		int res = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+            res += map.get(n) - 1;  // addtional pair can be formed btw n and all previous v == n;
+        }
+        return res;
+	}
+
+}

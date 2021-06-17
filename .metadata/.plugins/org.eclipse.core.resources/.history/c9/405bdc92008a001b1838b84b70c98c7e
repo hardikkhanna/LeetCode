@@ -1,0 +1,66 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Mar 21, 2021 Time : 9:52:44 AM
+ */
+public class listsrtin {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> list = new ArrayList<>();
+		list.add("ykc 82 01");
+		list.add("eo first qpx");
+		list.add("09z cat hamster");
+		list.add("06f 12 25 6");
+		list.add("az0 first qpx");
+		list.add("236 cat dog rabbit snake");
+		List<String> ans = getSorted(list);
+		System.out.println(ans);
+	}
+
+	/**
+	 * @param list
+	 * @return
+	 */
+	public static List<String> sortBoxes(List<String> boxList) {
+		// Write your code here
+		List<String> olderVersion = new ArrayList<>();
+		List<String> newVersion = new ArrayList<>();
+		for (int i = 0; i < boxList.size(); i++) {
+			String str = boxList.get(i);
+			String input = str.substring(str.indexOf(' '));
+			if (Character.isDigit(str.charAt(0))) {
+				newVersion.add(str);
+			} else {
+				olderVersion.add(str);
+			}
+		}
+
+		for (int i = 0; i < olderVersion.size() - 1; i++) {
+			String str1 = olderVersion.get(i);
+			for (int j = i + 1; j < olderVersion.size(); ++j) {
+				String str2 = olderVersion.get(j);
+				String first = str1.substring(str1.indexOf(' '));
+				String second = str2.substring(str2.indexOf(' '));
+				if (first.compareTo(second) > 0) {
+					String temp = olderVersion.get(i);
+					olderVersion.set(i, olderVersion.get(j));
+					olderVersion.set(j, temp);
+				}
+			}
+		}
+		return olderVersion;
+	}
+
+}

@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 13, 2021
+ * Time : 6:28:44 PM
+ */
+
+
+public class Outer 
+{
+    public static void throwit() 
+    {
+        throw new RuntimeException();
+    }
+    public static void main(String args[])
+    {
+        try 
+        {
+            System.out.println("Hello world ");
+            throwit();
+            System.out.println("try block ");
+        }
+        finally 
+        {
+            System.out.println("Finally");
+        }
+    }
+}

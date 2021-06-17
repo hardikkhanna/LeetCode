@@ -1,0 +1,161 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 09-Apr-2021 Time : 9:16:06 pm
+ */
+public class PrintNodesAtDistanceKFromNode extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		int target = sc.nextInt();
+		int k = sc.nextInt();
+
+		nodesAtDistanceK(root, target, k);
+		sc.close();
+	}
+
+	/**
+	 * @param root
+	 * @param k
+	 */
+	private static void printNodesAtDistanceK(BinaryTreeNode<Integer> root, int target, int k) {
+		nodesAtDistanceK(root, target, k);
+
+	}
+
+	/**
+	 * @param root
+	 * @param target
+	 * @param k
+	 */
+	private static int printNodesAtKHelper(BinaryTreeNode<Integer> root, int target, int k) {
+
+		if (root == null)
+			return -1;
+
+		if (root.data == target) {
+			printNodesAtDepthK(root, k);
+			return 0;
+		}
+
+		int leftDepth = printNodesAtKHelper(root.left, target, k);
+		if (leftDepth != -1) {
+
+			// If root is at distance k from target, print root
+			// Note that dl is Distance of root's left child from
+			// target
+			if (leftDepth + 1 == k) {
+				System.out.println(root.data);
+			} else {
+				// Else go to right subtree and print all k-dl-2 distant nodes
+				// Note that the right child is 2 edges away from left child
+				printNodesAtDepthK(root.right, k - (leftDepth + 1) - 1);
+			}
+			return 1 + leftDepth;
+		}
+
+		int rightDepth = printNodesAtKHelper(root.right, target, k);
+		if (rightDepth != -1) {
+			if (rightDepth + 1 == k) {
+				System.out.println(root.data);
+			} else {
+				printNodesAtDepthK(root.left, k - (rightDepth + 1) - 1);
+			}
+			return 1 + rightDepth;
+		}
+		return -1;
+
+	}
+
+	/**
+	 * @param root
+	 * @param k
+	 */
+	private static void printNodesAtDepthK(BinaryTreeNode<Integer> root, int k) {
+
+		if (root == null)
+			return;
+
+		if (k == 0) {
+			System.out.println(root.data);
+		}
+
+		printNodesAtDepthK(root.left, k);
+		printNodesAtDepthK(root.right, k);
+
+	}
+
+	private static void printkdistanceNodeDown(BinaryTreeNode<Integer> root, int k) {
+		if (root == null)
+			return;
+
+		// if Node is at 0th Distance
+		// then simply print the node
+		if (k == 0) {
+			System.out.println(root.data);
+			// return 0;
+		}
+
+		printkdistanceNodeDown(root.left, k - 1);
+		printkdistanceNodeDown(root.right, k - 1);
+	}
+
+	public static int nodesAtDistanceK(BinaryTreeNode<Integer> node, int target, int k) {
+		// Base Case 1: If tree is empty, return -1
+		if (node == null)
+			return -1;
+		if (node.data == target) {
+			printkdistanceNodeDown(node, k);
+			return 0;
+		}
+
+		// Recur for left subtree
+		int dl = nodesAtDistanceK(node.left, target, k);
+
+		// Check if target node was found in left subtree
+		if (dl != -1) {
+
+			// If root is at distance k from target, print root
+			// Note that dl is Distance of root's left child from
+			// target
+			if (dl + 1 == k) {
+				System.out.print(node.data);
+				System.out.println("");
+			}
+
+			// Else go to right subtree and print all k-dl-2 distant nodes
+			// Note that the right child is 2 edges away from left child
+			else
+				printkdistanceNodeDown(node.right, k - dl - 2);
+
+			// Add 1 to the distance and return value for parent calls
+			return 1 + dl;
+		}
+
+		// MIRROR OF ABOVE CODE FOR RIGHT SUBTREE
+		// Note that we reach here only when node was not found in left
+		// subtree
+		int dr = nodesAtDistanceK(node.right, target, k);
+		if (dr != -1) {
+			if (dr + 1 == k) {
+				System.out.print(node.data);
+				System.out.println("");
+			} else
+				printkdistanceNodeDown(node.left, k - dr - 2);
+			return 1 + dr;
+		}
+		return -1;
+	}
+
+}

@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package leetcode.dp.problems.easy;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 09-Jun-2021 Time : 4:39:32 pm
+ */
+public class JumpGameVI extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[] nums = get1DArray();
+		int k = sc.nextInt();
+		int ans = maxResult(nums, k);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
+	static int[] memo;
+	private static int maxResult(int[] nums, int k) {
+		memo = new int[nums.length];
+		return maxResult(nums, k, 0, nums.length);
+	}
+
+	private static int maxResult(int[] nums, int k, int start, int n) {
+		if(start >= n - 1) nums[n - 1];
+		int max = Integer.MIN_VALUE;
+		
+	}
+
+}

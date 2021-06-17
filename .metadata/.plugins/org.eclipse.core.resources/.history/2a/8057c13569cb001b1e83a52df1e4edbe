@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 12-Jun-2021
+ * Time : 3:59:36 pm
+ */
+public class PrizeDistribution {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

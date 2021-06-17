@@ -1,0 +1,14 @@
+package leetcode.array.problems;
+
+public class RunningSum1DArray {
+
+	 public int[] runningSum(int[] nums) {
+	        
+	    }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

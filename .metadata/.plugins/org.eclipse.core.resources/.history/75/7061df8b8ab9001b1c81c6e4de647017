@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 20-May-2021 Time : 9:34:41 pm
+ */
+public class FruitsAndBaskets {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while (t-- > 0) {
+			int n = sc.nextInt();
+			String str = sc.next();
+			int ans = maximumFruits(str, n);
+			System.out.println(ans);
+		}
+
+	}
+
+	/**
+	 * @param str
+	 * @param n
+	 * @return
+	 */
+	private static int maximumFruits(String str, int n) {
+		if (str == null || str.length() == 0)
+			return 0;
+
+		int max = 1;
+		HashMap<Character, Integer> map = new HashMap<>();
+		int right = 0;
+		int left = 0;
+		while (right < str.length()) {
+			if (map.containsKey(str.charAt(right)) || map.size() >= 2) {
+				map.remove(str.charAt(left));
+				left++;
+			}
+			int val = 0;
+			if (map.size() > 0) {
+				for (int key : map.keySet())
+					val += map.get(key);
+			}
+			max = Math.max(max, val);
+			map.put(str.charAt(right), map.getOrDefault(map.get(str.charAt(right) - 65), 0) + 1);
+			right++;
+		}
+
+		return max;
+	}
+
+}

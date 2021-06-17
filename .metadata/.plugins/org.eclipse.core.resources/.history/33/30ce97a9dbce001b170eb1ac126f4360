@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 17-Jun-2021
+ * Time : 1:17:15 am
+ */
+public class ShortestDistanceColor {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

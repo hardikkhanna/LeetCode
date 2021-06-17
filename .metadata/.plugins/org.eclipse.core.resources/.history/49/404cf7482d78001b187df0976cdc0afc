@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 26, 2021 Time : 12:41:43 PM
+ */
+public class Pattern		 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int a = 10, b = 20, c = 100;
+
+        if(a <= b && b != 20) {
+            System.out.println("hello");
+        }
+        else if(c >= a && c >= b) {
+            System.out.println("hi");
+        }
+        else {
+            System.out.println("hey");
+        }
+	}	
+
+}

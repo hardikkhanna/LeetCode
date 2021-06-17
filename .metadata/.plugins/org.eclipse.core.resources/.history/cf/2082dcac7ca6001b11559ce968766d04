@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package oops.concept;
+
+/**
+ * @author Hardik
+ *
+ *         Date : 15-Apr-2021 Time : 11:45:57 am
+ */
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	static Main m = new Main();
+
+	/**
+	 * 
+	 */
+	public Main() {
+		System.out.println("Constructor call");
+	}
+
+	public static void swap(Integer i, Integer j) {
+		Integer temp = new Integer(i);
+		i = j;
+		j = temp;
+	}
+
+	public static void main(String[] args) {
+		Integer i = new Integer(10);
+		Integer j = new Integer(20);
+		swap(i, j);
+		System.out.println("i = " + i + ", j = " + j);
+	}
+
+}

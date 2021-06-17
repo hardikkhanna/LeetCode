@@ -1,0 +1,74 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 30-May-2021 Time : 6:11:17 pm
+ */
+public class MergeSort2DArray extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		String[][] matrix = new String[n][m];
+		String[][] temp = new String[n][m];
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				matrix[i][j] = sc.next();
+			}
+		}
+		mergeSort(matrix, temp, 0, matrix.length, 0);
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				System.out.print(matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+	public static void mergeSort(String[][] arr, String[][] temp, int leftStart, int rightEnd, int featureIndex) {
+		if (leftStart >= rightEnd) {
+			return;
+		}
+		int mid = (leftStart + rightEnd) / 2;
+		mergeSort(arr, temp, leftStart, mid, featureIndex);
+		mergeSort(arr, temp, mid + 1, rightEnd, featureIndex);
+		mergeHalves(arr, temp, leftStart, mid, rightEnd, featureIndex);
+	}
+
+	public static void mergeHalves(String[][] array, String[][] aux, int start, int middle, int end, int index) {
+
+		if (start >= end)
+			return;
+
+		int ls = start, le = middle, rs = middle + 1, re = end, size = end - start + 1;
+
+		for (int i = 0; i < size; i++) {
+			if (rs > re) {
+				aux[i] = array[ls++];
+			} else if (ls > le) {
+				aux[i] = array[rs++];
+			} else if (Double.parseDouble(array[ls][index]) <= Double.parseDouble(array[rs][index])) {
+				aux[i] = array[ls++];
+			} else {
+				aux[i] = array[rs++];
+			}
+		}
+
+		System.arraycopy(aux, 0, array, start, size);
+
+	}
+
+}

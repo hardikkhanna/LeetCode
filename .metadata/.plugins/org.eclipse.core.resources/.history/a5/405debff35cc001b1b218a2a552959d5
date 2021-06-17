@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 13-Jun-2021 Time : 4:24:59 pm
+ */
+public class PalindromePairs extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String[] words = get1DStringArray();
+		List<List<String>> ans = palindromePairs(words);
+		for (List<Stirng> l : ans) {
+			System.out.print(l + " ");
+		}
+
+	}
+
+}

@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 2:40:31 PM
+ */
+public class IncreasingDecreasingString {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		str = sortString(str);
+		sc.close();
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static String sortString(String str) {
+		List<String> list = Arrays.asList(str.split(""));
+		while (!list.isEmpty()) {
+			int j = 0;
+			String s = list.stream().sorted().distinct().toString();
+			list.forEach(i -> {
+				list.remove(list.indexOf(s.charAt(j)));
+			});
+		}
+		return null;
+	}
+
+}

@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 13, 2021 Time : 5:02:45 PM
+ */
+public class HeightOfBinaryTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		int height = findHeight(root);
+		System.out.println(height);
+	}
+
+	/**
+	 * @param root
+	 * @return
+	 */
+	private static int findHeight(BinaryTreeNode<Integer> root) {
+		if (root == null)
+			return 0;
+		int left = findHeight(root.left);
+		int right = findHeight(root.right);
+		if (left < right)
+			return right + 1;
+
+		return 0;
+	}
+
+}

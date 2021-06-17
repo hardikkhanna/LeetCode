@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.Scanner;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 12-Jun-2021 Time : 9:05:25 pm
+ */
+public class BiWeekly5202 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[][] arr = get2DArray();
+		int ans = largestMagicSquare(arr);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param arr
+	 * @return
+	 */
+	private static int largestMagicSquare(int[][] arr) {
+		 int max = 1;
+	        for(int i = 0; i < grid.length; i++){
+	            for(int j = 0; j < grid[i].length; j++){
+	                
+	                if(isMagicSquare(grid, i, j, i + j, i + j)){
+	                    max = Math.max(max, j - 1);
+	                }
+	                
+	            }
+	        }
+	        
+	        return max;
+	}
+
+}

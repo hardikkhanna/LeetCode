@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 14, 2021
+ * Time : 4:45:09 PM
+ */
+public class StudentsUnableToEatLunch extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] students = get1DArray();
+		int[] sandwichdes = get1DArray();
+		int ans = countStudents(students,sandwichdes);
+		
+
+	}
+
+}

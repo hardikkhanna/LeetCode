@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package oops.concept;
+
+/**
+ * @author Hardik
+ *
+ *         Date : 15-Apr-2021 Time : 11:45:57 am
+ */
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	static Main m = new Main();
+
+	/**
+	 * 
+	 */
+	public Main() {
+		System.out.println("Constructor call");
+	}
+
+	public static void main(String[] args)
+    {
+        HashSet<String> hashSet = new HashSet<>();
+        hashSet.add("Geeks");
+        hashSet.add("For");
+        hashSet.add("Geeks");
+        hashSet.add("GeeksforGeeks");
+ 
+        System.out.println(hashSet);
+    }
+
+}

@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ * 10:08:21 PM
+ */
+public class XOROperationInArray {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n  = sc.nextInt();
+		int start = sc.nextInt();
+		sc.close();
+	}
+
+
+}

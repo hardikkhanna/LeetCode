@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 5, 2021 Time : 12:16:21 PM
+ */
+public class ScannerInput {
+	Scanner sc = new Scanner(System.in);
+
+	/**
+	 * @param args
+	 */
+	public void get1DArray() {
+		
+		int n = sc.nextInt();
+		in
+
+	}
+
+}

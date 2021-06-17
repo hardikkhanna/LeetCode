@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 4:43:18 PM
+ */
+public class CanMakeAPFromSequence extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		Boolean ans = canMakeArithmeticProgression(arr);
+		System.out.println(ans);
+
+	}
+
+}

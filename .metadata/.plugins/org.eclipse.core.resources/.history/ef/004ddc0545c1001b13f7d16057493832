@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 30-May-2021 Time : 6:11:17 pm
+ */
+public class MergeSort2DArray extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[][] matrix = get2DArray();
+		solve(matrix);
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; i++) {
+				System.out.print(matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+	/**
+	 * @param matrix
+	 */
+	private static void solve(int[][] matrix) {
+
+		sortByRow(matrix);
+		transpose(matrix);
+		sortByRow(matrix);
+		transpose(matrix);
+	}
+
+	/**
+	 * @param matrix
+	 */
+	private static void transpose(int[][] mat) {
+		int n = mat.length;
+		for (int i = 0; i < n; i++) {
+			for (int j = i + 1; j < n; j++) {
+				int temp = mat[i][j];
+				mat[i][j] = mat[j][i];
+				mat[j][i] = temp;
+			}
+		}
+
+	}
+
+	/**
+	 * @param matrix
+	 */
+	private static void sortByRow(int[][] matrix) {
+		for (int i = 0; i < n; i++)
+			Arrays.sort(mat[i]);
+	}
+
+}

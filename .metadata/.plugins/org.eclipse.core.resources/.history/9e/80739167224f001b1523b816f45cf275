@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 5, 2021 Time : 12:15:45 PM
+ */
+public class CanFormArray extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+	}
+
+}

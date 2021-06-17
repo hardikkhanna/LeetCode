@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 17-May-2021 Time : 4:48:01 pm
+ */
+public class CompareVersions {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String versionA = sc.next();
+		String versionB = sc.next();
+		int ans = compareVersion(versionA, versionB);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param versionA
+	 * @param versionB
+	 * @return
+	 */
+	private static int compareVersion(String versionA, String versionB) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

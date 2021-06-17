@@ -1,0 +1,54 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 3:12:22 PM
+ */
+public class LuckyNumbers extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[][] matrix = get2DArray();
+		List<Integer> ans = luckyNumbers(matrix);
+		ans.stream().forEach(i -> ans.get(i));
+
+	}
+
+	/**
+	 * @param matrix
+	 * @return
+	 */
+	private static List<Integer> luckyNumbers(int[][] matrix) {
+		int[] ans = new int[matrix.length];
+		HashMap<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < matrix.length; i++) {
+			int[] arr = matrix[i].clone();
+			int min = Arrays.stream(arr).min().getAsInt();
+			map.put(min, 1);
+		}
+
+		for (int i = 0; i < matrix[0].length; i++) {
+			int max = Integer.MIN_VALUE;
+			for (int j = 0; j < matrix.length; j++) {
+				if (max < matrix[i][j])
+					max = matrix[i][j];
+			}
+			if (map.containsKey(max))
+				map.put(max, map.get(max) + 1);
+			else
+				map.put(max, 1);
+		}
+		return null;
+	}
+
+}

@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package leetcode.sort.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 8:49:08 PM
+ */
+public class MaximumUnitsOnTruck extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

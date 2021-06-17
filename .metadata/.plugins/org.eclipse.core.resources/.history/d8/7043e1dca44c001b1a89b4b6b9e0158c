@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 2, 2021
+ * Time : 8:16:42 AM
+ */
+public class CountGoodTriplets {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		int ans = sumOddLengthSubarrays(arr,a,b,c);
+		System.out.println(ans);
+		sc.close();
+
+	}
+
+}

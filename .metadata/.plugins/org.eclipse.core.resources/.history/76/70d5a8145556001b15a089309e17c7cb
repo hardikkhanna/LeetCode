@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package leetcode.math.probems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 14, 2021
+ * Time : 4:11:08 PM
+ */
+public class SubtractProductAndSum {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n =sc.nextInt();
+		
+
+	}
+
+}

@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 23-May-2021 Time : 10:48:10 pm
+ */
+public class VaccineIII {
+
+	public static void main(String[] args) throws java.lang.Exception {
+		FastReader sc = new FastReader();
+		int t = sc.nextInt();
+		while (t-- > 0) {
+			long position = sc.nextLong();
+			long limit = sc.nextLong();
+			long[] ageGroup = new long[10];
+			for (int i = 0; i < 10; i++) {
+				ageGroup[i] = sc.nextLong();
+			}
+			long[] ans = findMinAndMaxDays(ageGroup, position, limit);
+			System.out.println(ans[0] + " " + ans[1]);
+		}
+	}
+
+	private static long[] findMinAndMaxDays(long[] ageGroup, long position, long limit){
+	    long min = 1;
+	    long max = 1;
+	    
+	    long left = 0;
+	    long day = 1;
+	    for(int i = 9; i >= 0; i++){
+	        if(ageGroup[i] <= limit){
+	            int sum = ageGroup;
+	            while(i >= 0 && limit <= sum){
+	                sum += ageGroup[i];
+	                i--;
+	            }
+	            left = sum - limit;
+	        }else if(ageGroup[i] > limit){
+	            int total = ageGroup[i] - limit;
+	            while(total > limit){
+	                total = total - limit;
+	                day++;
+	            }
+	        }
+	        
+	        day++;
+	    }
+	    
+	}
+
+}

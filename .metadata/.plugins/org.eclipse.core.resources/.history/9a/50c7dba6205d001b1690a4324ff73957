@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 23, 2021 Time : 7:39:01 AM
+ */
+public class DeterminStringsAreClose {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		String word = sc.next();
+		Boolean ans = closeStrings(str);
+		System.out.println(str);
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static Boolean closeStrings(String str) {
+		Set<Character> st = new HashSet<Character>();
+		for (char c : str.toCharArray()) {
+			st.add(c);
+		}
+
+		return null;
+	}
+
+}

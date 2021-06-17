@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 13, 2021 Time : 6:28:44 PM
+ */
+class MyThread extends Thread 
+{ 
+    MyThread() {} 
+    MyThread(Runnable r) {super(r); } 
+    public void run() 
+    { 
+        System.out.print("Inside Thread ");
+    } 
+} 
+class RunnableDemo implements Runnable 
+{ 
+    public void run() 
+    { 
+        System.out.print(" Inside Runnable"); 
+    } 
+} 
+class Outer 
+{  
+    public static void main(String[] args) 
+    { 
+        new MyThread().start(); 
+        new MyThread(new RunnableDemo()).start(); 
+    } 
+}

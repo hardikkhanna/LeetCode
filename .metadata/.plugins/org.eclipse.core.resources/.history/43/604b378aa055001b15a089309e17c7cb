@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 13, 2021 Time : 6:28:44 PM
+ */
+
+public class Outer extends Thread {
+	public static void Order(String s)
+	{
+		System.out.println("String");
+	}
+	public static void Order(Object o)
+	{
+		System.out.println("Object");
+	}
+	public static void main (String [] args)
+	{
+		Order(null);
+	}
+}

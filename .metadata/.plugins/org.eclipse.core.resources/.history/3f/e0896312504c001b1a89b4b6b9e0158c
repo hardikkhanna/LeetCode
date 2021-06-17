@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * 10:08:21 PM
+ */
+public class XOROperationInArray {
+	
+	public static void main(String[] args) {
+		hello();
+	}
+
+
+}

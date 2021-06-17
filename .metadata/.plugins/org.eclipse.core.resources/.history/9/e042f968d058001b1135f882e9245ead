@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 2:40:31 PM
+ */
+public class IncreasingDecreasingString {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		str = sortString(str);
+		sc.close();
+
+	}
+
+}

@@ -1,0 +1,72 @@
+/**
+ * 
+ */
+package leetcode.priorityQueue.problems;
+
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author Hardik
+ *
+ *         Date : 08-May-2021 Time : 6:15:10 pm
+ */
+public class KthLargestElement extends ScannerInput {
+
+	/**
+	 * @param arr
+	 * @param k
+	 */
+
+	PriorityQueue<Integer> q;
+	int k;
+
+	public KthLargestElement(int[] arr, int k) {
+		this.k = k;
+		q = new PriorityQueue<>(k);
+		for (int n : arr)
+			add(n);
+	}
+
+	public int add(int n) {
+		if (q.size() < k)
+			q.offer(n);
+		else if (q.peek() < n) {
+			q.poll();
+			q.offer(n);
+		}
+		return q.peek();
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int[] arr = get1DArray();
+		int k = sc.nextInt();
+		KthLargestElement obj = new KthLargestElement(arr, k);
+		obj.add(3);
+		obj.add(5);
+		obj.add(10);
+		obj.add(9);
+		obj.add(4);
+		System.out.println();
+		sc.close();
+	}
+
+	/**
+	 * @param arr
+	 * @param length
+	 * @param k
+	 * @return
+	 */
+	private static int kthLargest(int[] arr, int length, int k) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

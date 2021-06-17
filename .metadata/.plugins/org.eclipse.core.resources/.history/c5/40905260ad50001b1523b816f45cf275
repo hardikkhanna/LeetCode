@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 7, 2021 Time : 11:08:46 AM
+ */
+public class MergeInBetweenLinkedList {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+	}
+
+	/**
+	 * @param head
+	 * @param nextInt
+	 * @return
+	 */
+	
+
+}

@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 14, 2021 Time : 4:38:12 PM
+ */
+public class MapNode<K, V> {
+
+	K key;
+	V value;
+	MapNode<K, V> next;
+	
+	public MapNode<>(){
+		this.key = key;
+		this.value = value;
+	}
+}

@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 25-Apr-2021 Time : 6:31:11 pm
+ */
+public class SubTreeOfTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		BinaryTreeNode<Integer> subTree = takeInputLevelWise();
+		Boolean ans = isSubTree(root, subTree);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param root
+	 * @param subTree
+	 * @return
+	 */
+	private static Boolean isSubTree(BinaryTreeNode<Integer> T, BinaryTreeNode<Integer> S) {
+		if (T == null)
+			return false;
+		if (S == null)
+			return true;
+		Boolean result;
+		if (T.val == S.val) {
+			result = result || (isSubTree(T.left, S.left) && (isSubTree(T.right, S.right)));
+		} else {
+			result = result || (isSubTree(T.left, S) && (isSubTree(T.right, S)));
+		}
+		return result;
+	}
+
+}

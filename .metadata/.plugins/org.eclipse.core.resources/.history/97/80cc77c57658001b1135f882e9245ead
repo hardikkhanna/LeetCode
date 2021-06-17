@@ -1,0 +1,71 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 8:25:06 AM
+ */
+public class TupleWithSampleProduct extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int ans = tupleSameProduct(arr);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param arr
+	 * @return
+	 */
+	private static int tupleSameProduct(int[] arr) {
+		HashMap<Integer, pair> hp = new HashMap<Integer, pair>();
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+
+				// If product of pair is not in
+				// hash table, then store it
+				int prod = arr[i] * arr[j];
+
+				if (!hp.containsKey(prod))
+					hp.put(prod, new pair(i, j));
+
+				// If product of pair is also
+				// available in then print
+				// current and previous pair
+				else {
+					pair p = hp.get(prod);
+					System.out.println(arr[p.first] + " " + arr[p.second] + " " + "and" + " " + arr[i] + " " + arr[j]);
+					count++;
+					found = true;
+				}
+			}
+		}
+
+		return count;
+	}
+
+}
+
+class pair {
+
+	int first, second;
+
+	pair(int f, int s) {
+		first = f;
+		second = s;
+	}
+};

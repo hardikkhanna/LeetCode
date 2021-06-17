@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 31, 2021 Time : 8:19:36 AM
+ */
+public class WeeklyContest226 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		question1(sc);
+	}
+
+	/**
+	 * @param sc
+	 */
+	private static void question1(Scanner sc) {
+		int lowlimit = sc.nextInt();
+		int highlimit = sc.nextInt();
+		List<Integer> list = new ArrayList<Integer>();
+		for (int i = lowlimit; i <= highlimit; i++) {
+			int sum = 0;
+			while (i != 0) {
+				int rem = i % 10;
+				sum += rem;
+				i = i / 10;
+			}
+			list.add(sum);
+		}
+		Collections.sort(list);
+		System.out.println(list.get(list.size() - 1));
+	}
+
+}

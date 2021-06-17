@@ -1,0 +1,64 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 12-Jun-2021 Time : 3:44:54 pm
+ */
+public class Antiblot {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		System.out.println(antiblot(str));
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static String antiblot(String str) {
+		String ans = "";
+		int indexLeft = str.indexOf('+');
+		int indexRight = str.indexOf('=');
+		String left1 = str.substring(0, indexLeft).trim();
+		String left2 = str.substring(indexLeft + 1, indexRight).trim();
+		String right  = str.substring(indexRight + 1).trim(); 
+		
+		if(left1.contains("inkblot")) {
+			int num = Integer.valueOf(right) - Integer.valueOf(left2)
+			ans = String.valueOf(num);
+		}else if(left2.contains("inkblot")) {
+			int num = getValue(left1, right);
+			ans = String.valueOf(num);
+		}else if(right.contains("inkblot")) {
+			int num = Integer.valueOf(left1) + Integer.valueOf(left2);
+			ans = String.valueOf(num);
+		}else {
+			return str;
+		}
+		
+		return str.replace("inkblot", ans);
+	}
+
+	/**
+	 * @param left1
+	 * @param left2
+	 * @return
+	 */
+	private static int getValue(String left, String left2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

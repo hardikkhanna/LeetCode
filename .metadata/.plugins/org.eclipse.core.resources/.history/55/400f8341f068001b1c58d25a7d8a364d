@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.Arrays;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 7, 2021 Time : 8:02:50 AM
+ */
+public class WeeklyContest227 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		checkIfArrayisSortedAndRotated();
+
+	}
+
+	/**
+	 * 
+	 */
+	private static void checkIfArrayisSortedAndRotated() {
+		int[] nums = get1DArray();
+		Boolean ans = helper(nums);
+		System.out.println(ans);
+
+	}
+
+}

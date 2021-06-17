@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 8, 2021 Time : 5:35:39 PM
+ */
+class BestTimeToBuySellStocks extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] prices = get1DArray();
+		int ans = maxProfit(prices);
+		System.out.println(ans);
+
+	}
+
+}

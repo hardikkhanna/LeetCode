@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 6, 2021
+ * Time : 1:21:15 PM
+ */
+public class LinkedListCycle extends ScannerInput{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode head = scannerInput();
+		System.out.println(hasCycle(head));
+
+	}
+
+	/**
+	 * @param head
+	 */
+	private static boolean void hasCycle(ListNode head) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

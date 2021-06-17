@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Apr 4, 2021 Time : 8:19:47 AM
+ */
+public class WeeklyContest235 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[][] logs = get2DArray();
+		int k = sc.nextInt();
+		int[] ans = findingUsersActiveMinutes(logs, k);
+		for (int i = 0; i < ans.length; i++) {
+			System.out.print(ans[i] + " ");
+		}
+
+	}
+
+	/**
+	 * @param logs
+	 * @param k
+	 * @return
+	 */
+	private static int[] findingUsersActiveMinutes(int[][] logs, int k) {
+		HashMap<Integer, HashMap<Integer, Integer>> map = new HashMap<>();
+		for (int i = 0; i < logs.length; i++) {
+			int ID = logs[i][0];
+			int MIN = logs[i][1];
+			if (map.containsKey(ID)) {
+				HashMap<Integer, Integer> m = map.get(ID);
+				if (!m.containsKey(MIN)) {
+					m.put(MIN, 1);
+				}
+				map.put(ID, m);
+			} else {
+				HashMap<Integer, Integer> m = new HashMap<>();
+				m.put(MIN, 1);
+				map.put(ID, m);
+			}
+		}
+		int index = 1;
+		int[] ans = new int[k];
+		for (Integer i : map.keySet()) {
+			ans[map.get(i).size()] = map.get(i).size();
+		}
+
+		return ans;
+	}
+
+}

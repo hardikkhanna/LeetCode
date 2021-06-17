@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 26, 2021 Time : 12:41:43 PM
+ */
+public class Pattern	 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int x = 10;
+		while(x >= 0) {
+		    x = x - 1;
+		    System.out.print(x);
+		    x--;
+		}	
+	}	
+
+}

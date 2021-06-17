@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package leetcode.sort.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 8, 2021 Time : 7:02:19 PM
+ */
+public class LargestNumber {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int count = 0;
+		for(int i =1;i<=n;i++) {
+			count += i;
+		}
+		int rem = n % 8;
+		if(rem!=0)
+			count += 7*rem;
+		System.out.println(count);
+
+	}
+
+}

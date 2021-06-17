@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.List;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 3:12:22 PM
+ */
+public class LuckyNumbers extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[][] matrix = get2DArray();
+		List<Integer> ans = luckyNumbers(matrix);
+		ans.stream().forEach(i -> ans.get(i));
+
+	}
+
+	/**
+	 * @param matrix
+	 * @return
+	 */
+	private static List<Integer> luckyNumbers(int[][] matrix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

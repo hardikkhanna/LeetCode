@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.HashMap;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 2:44:32 PM
+ */
+public class CountTripletsToFormArraysOfEqualXOR extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] arr = get1DArray();
+		int ans = countTriplets(arr);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param arr
+	 * @return
+	 */
+	private static int countTriplets(int[] arr) {
+		HashMap<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < arr.length - 2; i++) {
+			for (int j = i + 1; j < arr.length - 1; j++) {
+				for (int k = j + 1; k < arr.length; k++) {
+					int xor = arr[i] ^ arr[j] ^ arr[k];
+					if (map.containsKey(xor)) {
+						map.put(xor, map.get(xor) + 1);
+					} else {
+						map.put(xor, 1);
+					}
+				}
+			}
+		}
+		return map.entrySet()
+		        .stream()
+		        .max((Entry<K, V> e1, Entry<K, V> e2) -> e1.getValue()
+		            .compareTo(e2.getValue();
+	}
+
+}

@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 13, 2021 Time : 5:40:49 PM
+ */
+public class MergeTwoBinaryTree extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> t1 = takeInputLevelWise();
+		BinaryTreeNode<Integer> t2 = takeInputLevelWise();
+		t1 = mergeTrees(t1, t2);
+		printTreeLevelWise(t1);
+
+	}
+
+	/**
+	 * @param t1
+	 * @param t2
+	 * @return
+	 */
+	private static BinaryTreeNode<Integer> mergeTrees(BinaryTreeNode<Integer> t1, BinaryTreeNode<Integer> t2) {
+		if (t1 == null && t2 == null) {
+			return null;
+		}
+		BinaryTreeNode<Integer> root = null;
+		if (t1 != null && t2 != null)
+			root.data = t1.data + t2.data;
+		if (t1 != null && t2 == null)
+			root.data = t1.data;
+		if (t2 != null && t1 == null)
+			root.data = t2.data;
+		root.left = mergeTrees(t1.left, t2.left);
+		root.right = mergeTrees(t1.right, t2.right);
+		return root;
+		return null;
+	}
+
+}

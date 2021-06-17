@@ -1,0 +1,67 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 26, 2021 Time : 12:41:43 PM
+ */
+public class Pattern {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		public static void main(String[] args) {
+	        // Write your code here
+	        Scanner sc = new Scanner(System.in);
+	        int n = sc.nextInt();
+	        
+	        int i = 1;
+	        
+	        int n1 = (n+1)/2;
+	        int n2 = n1-1;
+	        
+	        while(i <= n1){
+	        	int stars = 1;
+	        	int space = 1;
+	            while(space<= n1-i){
+	                System.out.print(" ");
+	                space++;
+	            }
+	            
+	            while(stars <= 2i-1){
+	                System.out.print("*");
+	                stars++;
+	            }
+	            System.out.println();
+	            i++;
+	            
+	        }
+	        
+	        i = n2;
+	        while(i>0){
+	            int stars = 1;
+	            int space = 1;
+	            
+	            while(space <= n2-i+1){
+	                System.out.print(" ");
+	                space++;
+	            }
+	            
+	            while(stars <= 2i-1){
+	                System.out.print("*");
+	                stars++;
+	            }
+	            System.out.println();
+	            i--;
+	            
+	            
+	        }
+	        
+	    }
+	}
+
+}

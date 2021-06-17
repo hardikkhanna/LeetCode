@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 30-May-2021
+ * Time : 6:11:17 pm
+ */
+public class MergeSort2DArray extends ScannerInput{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[][] matrix = get2DArray();
+		solve(matrix);
+		for(int i= 0; i < matrix.length;i++) {
+			F
+		}
+
+	}
+
+}

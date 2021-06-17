@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 4, 2021
+ * Time : 12:34:09 PM
+ */
+public class DeleteDuplicates extends ScannerInput{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode head = ScannerInput.scannerInput();
+
+	}
+
+}

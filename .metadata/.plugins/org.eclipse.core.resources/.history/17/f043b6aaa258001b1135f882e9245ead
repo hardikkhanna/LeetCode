@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 17, 2021 Time : 2:26:44 PM
+ */
+public class CharactersThatHaveOddCount {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int n = 4;
+		String str = generateTheString(n);
+		System.out.println(str);
+
+	}
+
+	/**
+	 * @param n
+	 * @return
+	 */
+	private static String generateTheString(int n) {
+		n = 97;
+		String str = "";
+		for (int i = 0; i < n; i++)
+			str += Character.toString((char) n++);
+		return str;
+	}
+
+}

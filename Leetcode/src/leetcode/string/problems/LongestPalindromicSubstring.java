@@ -3,6 +3,8 @@
  */
 package leetcode.string.problems;
 
+import java.util.Scanner;
+
 /**
  * @author Hardik
  *
@@ -13,11 +15,80 @@ public class LongestPalindromicSubstring {
 	/**
 	 * @param args
 	 */
+	static int inital;
+	static int last;
+
 	public static void main(String[] args) {
-		String str = "babad";
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
 		str = longestPalindrome(str);
 		System.out.println(str);
 
+		str = helper(str);
+		System.out.println(str);
+		sc.close();
+		
+		Solution sol = new Solution();
+		System.out.println(sol.longestPalindrome(str));
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static String helper(String str) {
+		if (str == null || str.length() == 0) {
+			return "";
+		}
+
+		int i = 0;
+		int j = str.length() - 1;
+		inital = Integer.MAX_VALUE;
+		last = Integer.MIN_VALUE;
+		return helper(str, i, j);
+
+	}
+
+	private static String helper(String str, int start, int end) {
+		if (str == null || str.length() == 0)
+			return "";
+		if (str.charAt(start) == str.charAt(end) && isPalindrome(str, start, end)) {
+			inital = Math.min(inital, start);
+			last = Math.max(last, end);
+			return str.substring(inital, last + 1);
+		}
+
+		String opt1 = helper(str, start + 1, end);
+		String opt2 = helper(str, start, end - 1);
+		String opt3 = helper(str, start + 1, end + 1);
+
+		if (opt1.length() > opt2.length() && opt1.length() > opt3.length()) {
+			return opt1;
+		} else if (opt2.length() > opt1.length() && opt2.length() > opt3.length()) {
+			return opt2;
+		}
+		return opt3;
+
+	}
+
+	/**
+	 * @param str
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	private static boolean isPalindrome(String str, int start, int end) {
+		if (str == null || str.length() == 0)
+			return true;
+
+		while (start < end) {
+			if (str.charAt(start) != str.charAt(end)) {
+				return false;
+			}
+			start++;
+			end--;
+		}
+		return true;
 	}
 
 	/**

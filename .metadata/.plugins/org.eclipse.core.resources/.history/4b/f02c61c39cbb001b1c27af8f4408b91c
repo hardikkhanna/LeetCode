@@ -1,0 +1,91 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 23-May-2021 Time : 1:17:39 pm
+ */
+public class TicTacToe {
+
+	private int[][] grid;
+
+	/** Initialize your data structure here. */
+	public TicTacToe(int n) {
+		grid = new int[n][n];
+	}
+
+	/**
+	 * Player {player} makes a move at ({row}, {col}).
+	 * 
+	 * @param row    The row of the board.
+	 * @param col    The column of the board.
+	 * @param player The player, can be either 1 or 2.
+	 * @return The current winning condition, can be either: 0: No one wins. 1:
+	 *         Player 1 wins. 2: Player 2 wins.
+	 */
+	public int move(int row, int col, int player) {
+
+		grid[row][col] = player;
+
+		if (checkVertically(grid, row, col, player))
+			return player;
+		if(checkDiagonally(grid, player)) return player;
+		if(checkAntiDiagonal(grid, player)) return player;
+		return 0;
+
+	}
+
+	/**
+	 * @param grid2
+	 * @param row
+	 * @param col
+	 * @param player
+	 * @return
+	 */
+	private boolean checkVertically(int[][] grid2, int row, int col, int player) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/**
+	 * @param grid
+	 * @param player
+	 * @return 
+	 */
+	private boolean checkDiagonally(int[][] grid, int player) {
+		for(int i = 0; i < grid.length; i++) {
+			if (grid[i][i] != player)
+				return false;
+		}
+		return true;
+	}
+
+	/**
+	 * @param grid
+	 * @param player
+	 * @return
+	 */
+	private boolean checkAntiDiagonal(int[][] grid, int player) {
+		for (int i = 0, j = grid.length - 1; i < grid.length && j >= 0; i++, j--) {
+			if (grid[i][j] != player)
+				return false;
+		}
+		return true;
+	}
+
+	public static void main(String[] args) {
+
+		TicTacToe obj = new TicTacToe(3);
+		System.out.println(obj.move(0, 0, 1));
+		System.out.println(obj.move(0, 2, 2));
+		System.out.println(obj.move(2, 2, 1));
+		System.out.println(obj.move(1, 1, 2));
+		System.out.println(obj.move(2, 0, 1));
+		System.out.println(obj.move(1, 0, 2));
+		System.out.println(obj.move(2, 1, 1));
+		
+	}
+}

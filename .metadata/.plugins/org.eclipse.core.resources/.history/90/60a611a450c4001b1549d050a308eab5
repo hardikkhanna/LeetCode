@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package oops.concept;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 03-Jun-2021 Time : 3:12:51 pm
+ */
+public class Sample {
+
+	/**
+	 * 
+	 */
+	public Sample(String name, String species) {
+		new Sample("h", "h", false);
+	}
+
+	/**
+	 * 
+	 */
+	public Sample(String name, String species, boolean flag) {
+		System.out.println("reaches");
+	}
+
+	public static void main(String[] args) {
+		ArrayList<Pencil> pencilCase = new ArrayList<>();
+
+	}
+
+}

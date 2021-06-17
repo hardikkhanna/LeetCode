@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+/**
+ * @author Hardik
+ *
+ *         Date : Jan 3, 2021 Time : 4:11:22 PM
+ */
+public class DecryptStringFromAlphabet {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String str = "10#11#12";
+		str = freqAlphabets(str);
+		System.out.println(str);
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static String freqAlphabets(String s) {
+		String ans = "";
+
+		while (!s.isEmpty()) {
+			String sa = s.substring(0, s.indexOf('#'));
+			ans += (char) (96 + Integer.valueOf(sa));
+			s = s.replace(sa + '#', "");
+		}
+
+		return ans;
+	}
+
+}

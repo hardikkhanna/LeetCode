@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 26, 2021 Time : 12:41:43 PM
+ */
+public class int x = 10;
+while(x >= 0) {
+    x = x - 1;
+    System.out.print(x);
+    x--;
+} {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int a = 6;
+		int b = 12;
+		while (a < b) {
+		    System.out.print("In the loop");
+		    a += 2;
+		    b -= 2;
+		}		
+	}	
+
+}

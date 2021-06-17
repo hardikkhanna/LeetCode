@@ -1,0 +1,77 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Mar 10, 2021 Time : 1:02:14 PM
+ */
+public class MaximumSumPath extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] input1 = get1DArray();
+		int[] input2 = get1DArray();
+		int path = maximumSumPath(input1, input2);
+		System.out.println(path);
+
+	}
+
+	/**
+	 * @param input1
+	 * @param input2
+	 * @return
+	 */
+	private static int maximumSumPath(int[] input1, int[] input2) {
+		int i = 0, j = 0;
+		int m = input1.length;
+		int n = input2.length;
+
+		int maxSum = 0, sum1 = 0, sum2 = 0;
+
+		while (i < m && j < n) {
+			
+			if (input1[i] < input2[j])
+				sum1 += input1[i++];
+
+			else if (input1[i] > input2[j])
+				sum2 += input2[j++];
+
+			else {
+				maxSum += Math.max(sum1, sum2);
+
+				sum1 = 0;
+				sum2 = 0;
+
+				int temp = i;
+				while (i < m && input1[i] == input2[j])
+					sum1 += input1[i++];
+
+				while (j < n && input1[temp] == input2[j])
+					sum2 += input2[j++];
+
+				maxSum += Math.max(sum1, sum2);
+
+				sum1 = 0;
+				sum2 = 0;
+			}
+		}
+
+		while (i < m)
+			sum1 += input1[i++];
+
+		while (j < n)
+			sum2 += input2[j++];
+
+		maxSum += Math.max(sum1, sum2);
+
+		return maxSum;
+	}
+
+
+
+}

@@ -1,0 +1,97 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 23-May-2021 Time : 8:02:58 pm
+ */
+public class ReachDestination {
+
+	private static int[][] dp;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int sx = 1;
+		int sy = 1;
+		int dx = 3;
+		int dy = 5;
+		// Recursive Approach
+		// Boolean ans = reachDestination(sx, sy, dx, dy);
+		// System.out.println(ans);
+		// Recursion with Memoizarion
+		Boolean ans1 = reachDestinationMemo(sx, sy, dx, dy);
+		System.out.println(ans1);
+
+	}
+
+	/**
+	 * @param sx
+	 * @param sy
+	 * @param dx
+	 * @param dy
+	 * @return
+	 */
+	private static Boolean reachDestinationMemo(int sx, int sy, int dx, int dy) {
+		int row = Math.max(dx, dy);
+		dp = new int[row + 1][row + 1];
+		for (int i = 0; i < dp.length; i++) {
+			for (int j = 0; j < dp[i].length; j++) {
+				dp[i][j] = -1;
+			}
+		}
+		return reachDestinationHelper(sx, sy, dx, dy);
+	}
+
+	/**
+	 * @param sx
+	 * @param sy
+	 * @param dx
+	 * @param dy
+	 * @return
+	 */
+	private static Boolean reachDestinationHelper(int sx, int sy, int dx, int dy) {
+		if (sx == dx && sy == dy) {
+			dp[sx][sy] = 1;
+			return true;
+		}
+
+		if (sx >= Math.max(dx, dy) || sy >= Math.max(dx, dy))
+			return false;
+		if (dp[sx][sy] != -1) {
+			if (dp[sx][sy] == 1)
+				return true;
+			return false;
+		}
+		Boolean ans = reachDestinationHelper(sx + sy, sy, dx, dy) || reachDestinationHelper(sx, sx + sy, dx, dy);
+		if (ans)
+			dp[sx][sy] = 1;
+		else
+			dp[sx][sy] = 0;
+		return ans;
+	}
+
+	/**
+	 * @param sx
+	 * @param sy
+	 * @param dx
+	 * @param dy
+	 * @return
+	 */
+	private static Boolean reachDestination(int sx, int sy, int dx, int dy) {
+		if (sx == dx && sy == dy)
+			return true;
+		if (sx >= Math.max(dx, dy) || sy >= Math.max(dx, dy))
+			return false;
+
+		Boolean ans = reachDestination(sx + sy, sy, dx, dy) || reachDestination(sx, sx + sy, dx, dy);
+		return ans;
+	}
+
+}

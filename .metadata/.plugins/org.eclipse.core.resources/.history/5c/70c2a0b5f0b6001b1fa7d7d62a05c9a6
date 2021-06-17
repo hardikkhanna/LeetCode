@@ -1,0 +1,84 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 17-May-2021 Time : 2:29:51 pm
+ */
+public class NextSmallestPalindrome {
+
+	/**
+	 * @param args
+	 */
+	static StringBuilder ans;
+	static int carry;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+
+		while (t-- > 0) {
+			int n = sc.nextInt();
+			String str = sc.next();
+			String ans = nextSmallestPlaindrome(str);
+			System.out.println(ans);
+		}
+		sc.close();
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static String nextSmallestPlaindrome(String number) {
+		ans = new StringBuilder(number);
+		carry = 0;
+		ans = nextSmallestPalindrome(ans, ans.toString(), 0, number.length() - 1);
+		if (carry >= 1) {
+			ans.deleteCharAt(ans.length() - 1);
+			ans.append(carry);
+			ans.insert(0, carry);
+		}
+		return ans.toString();
+	}
+
+	/**
+	 * @param number
+	 * @param original
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	private static StringBuilder nextSmallestPalindrome(StringBuilder number, String original, int start, int end) {
+		if (start > end)
+			return number;
+		if ((start == end || end - start == 1)) {
+			if(start == end && Long.valueOf(number.toString()) <= Long.valueOf(original))
+			int val = Character.getNumericValue(number.charAt(start)) + 1;
+			number.setCharAt(start, Character.forDigit(val % 10, 10));
+			number.setCharAt(end, number.charAt(start));
+			carry = val / 10;
+			return number;
+		}
+		if (number.charAt(start) != number.charAt(end)) {
+			number.setCharAt(end, number.charAt(start));
+		}
+		StringBuilder ans = nextSmallestPalindrome(number, original, start + 1, end - 1);
+
+		if (carry >= 1) {
+			int val = Character.getNumericValue(ans.charAt(start));
+			val = val + 1;
+			ans.setCharAt(start, Character.forDigit(val % 10, 10));
+			ans.setCharAt(end, ans.charAt(start));
+			carry = val / 10;
+		}
+		return ans;
+	}
+
+}

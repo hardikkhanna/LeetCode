@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package leetcode.binarytrees.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 14, 2021 Time : 11:15:07 PM
+ */
+public class SearchBST extends BinaryTreeUse {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int val = 2;
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		root = searchBST(root, val);
+		printTreeLevelWise(root);
+
+	}
+
+}

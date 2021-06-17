@@ -1,0 +1,74 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 17-May-2021 Time : 9:27:07 pm
+ */
+public class KthCharacterOfDecryptedString {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		String num = sc.next();
+		char ans = kThCharaterOfDecryptedString(str, Long.valueOf(num));
+		System.out.println(ans);
+	}
+
+	/**
+	 * @param str
+	 * @param valueOf
+	 * @return
+	 */
+	private static char kThCharaterOfDecryptedString(String str, Long k) {
+		String expand = "";
+
+		String temp = ""; // Current substring
+		int freq = 0; // Count of current substring
+		int count = 0;
+		for (int i = 0; i < str.length();) {
+			temp = ""; // Current substring
+			freq = 0; // count frequency of current substring
+
+			while (i < str.length() && str.charAt(i) >= 'a' && str.charAt(i) <= 'z') {
+				// push character in temp
+				temp += str.charAt(i);
+				i++;
+			}
+
+			// read number for how many times string temp
+			// will be repeated in decompressed string
+			while (i < str.length() && str.charAt(i) >= '1' && str.charAt(i) <= '9') {
+				// generating frequency of temp
+				freq = freq * 10 + str.charAt(i) - '0';
+				i++;
+			}
+
+			// now append string temp into expand
+			// equal to its frequency
+
+			if (count + (freq * temp.length()) >= k) {
+				k = k - count;
+				count = k.intValue();
+			}
+			count += freq * temp.length();
+		}
+
+		// this condition is to handle the case
+		// when string str is ended with alphabets
+		// not with numeric value
+		if (freq == 0)
+			expand += temp;
+
+		return expand.charAt(((int) k) - 1);F
+	}
+
+}

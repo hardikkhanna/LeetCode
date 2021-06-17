@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+package leetcode.dp.problems.easy;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 09-Jun-2021
+ * Time : 12:36:17 pm
+ */
+public class SpecialNumbers {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int number = sc.nextInt();
+		int increasingCost = sc.nextInt();
+		int decreasingCost = sc.nextInt();
+		int ans = getNumber(number, increasingCost, decreasingCost);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param number
+	 * @param increasingCost
+	 * @param decreasingCost
+	 * @return
+	 */
+	private static int getNumber(int number, int increasingCost, int decreasingCost) {
+		Set<Integer> st = new HashSet<Integer>();
+		fillPrime(st, number);
+		
+		return 0;
+	}
+
+	/**
+	 * @param st
+	 * @param number
+	 */
+	private static void fillPrime(Set<Integer> st, int n) {
+		boolean[] isPrime = new boolean[n + 1];
+	    for (int i = 0; i <= n; i++)
+	    {
+	        isPrime[i] = true;
+	    }
+
+	    for (int i = 2; i <= n; i++)
+	    {
+	        if (isPrime[i])
+	        {
+	            for (int j = i * i; j <= n; j += i)
+	            {
+	                isPrime[j] = false;
+	            }
+	            count++;
+	        }
+	    }
+	}
+
+}

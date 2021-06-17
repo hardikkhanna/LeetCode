@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 24, 2021 Time : 8:50:57 AM
+ */
+public class SortTheMatrixDiagonally extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[][] arr = get2DArray();
+		int k = 1;
+		arr = diagonalSort(arr);
+		System.out.println(5 ^ 5);
+	}
+
+}

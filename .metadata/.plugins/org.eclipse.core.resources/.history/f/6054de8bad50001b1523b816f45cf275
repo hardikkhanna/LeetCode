@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 7, 2021 Time : 11:08:46 AM
+ */
+public class MergeInBetweenLinkedList extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode list1 = scannerInput();
+		ListNode list2 = scannerInput();
+
+	}
+
+}

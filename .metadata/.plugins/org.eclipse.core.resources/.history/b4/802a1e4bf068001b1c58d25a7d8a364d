@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 7, 2021 Time : 8:02:50 AM
+ */
+public class WeeklyContest227 extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		checkIfArrayisSortedAndRotated();
+
+	}
+
+	/**
+	 * 
+	 */
+	private static void checkIfArrayisSortedAndRotated() {
+		int[] nums = get1DArray();
+		Boolean ans = helper(nums);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param nums
+	 * @return
+	 */
+	private static Boolean helper(int[] nums) {
+		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> list2 = new ArrayList<>();
+		return null;
+	}
+
+}

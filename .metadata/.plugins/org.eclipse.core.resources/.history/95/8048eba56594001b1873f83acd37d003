@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.stack.problems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Apr 3, 2021
+ * Time : 3:46:04 PM
+ */
+public class RestrictiveCandyCrush {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

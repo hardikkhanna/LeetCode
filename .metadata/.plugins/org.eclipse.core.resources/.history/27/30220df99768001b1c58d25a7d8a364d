@@ -1,0 +1,82 @@
+/**
+ * 
+ */
+package leetcode.weeklycontest.problems;
+
+import java.util.Scanner;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Feb 6, 2021 Time : 8:17:29 PM
+ */
+public class BIWeeklyContest extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		sumOfUniqueIntegers(sc);
+		maximumAbsoluteSumOfSubArray(sc);
+		maximumLengthOfString(sc);
+		sc.close();
+	}
+
+	/**
+	 * @param sc
+	 */
+	private static void maximumLengthOfString(Scanner sc) {
+		String s = sc.next();
+		int ans = helper(s);
+		System.out.println(ans);
+	}
+
+	/**
+	 * @param s
+	 * @return
+	 */
+	private static int helper(String s) {
+		int startPtr = 0;
+		int endPtr = s.length() - 1;
+
+		while (startPtr < endPtr && s.charAt(startPtr) == s.charAt(endPtr)) {
+			char ch = s.charAt(startPtr);
+
+			while (startPtr <= endPtr && s.charAt(startPtr) == ch) {
+				startPtr++;
+			}
+			while (endPtr > startPtr && s.charAt(endPtr) == ch) {
+				endPtr--;
+			}
+		}
+
+		return endPtr - startPtr + 1;
+	}
+
+	/**
+	 * @param sc
+	 */
+	private static void maximumAbsoluteSumOfSubArray(Scanner sc) {
+		int[] nums = get1DArray();
+		int s = 0, min = 0, max = 0;
+		for (int a : nums) {
+			s += a;
+			min = Math.min(min, s);
+			max = Math.max(max, s);
+		}
+		System.out.println(max - min);
+	}
+
+	/**
+	 * @param sc
+	 * 
+	 */
+	private static void sumOfUniqueIntegers(Scanner sc) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,79 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.ArrayList;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 27-May-2021 Time : 2:32:56 am
+ */
+public class PartitionInKSubsetsOfEqualSum extends ScannerInput{
+
+	private static ArrayList<ArrayList<Integer>> ans;
+	private static ArrayList<ArrayList<Integer>> temp;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		int[] nums = get1DArray();
+		int k = sc.nextInt();
+		Boolean ans = partiton(nums, k);
+		for (ArrayList<Integer> a : arr) {
+			System.out.println(a);
+		}
+	}
+
+	/**
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
+	private static boolean partiton(int[] nums, int k) {
+		if (k > nums.length)
+			return null;
+		ans = new ArrayList<>();
+		temp = new ArrayList<>();
+		for (int i = 0; i < k; i++)
+			temp.add(new ArrayList<Integer>());
+		parition(nums, k, 0, 0);
+		return ans;
+	}
+
+	/**
+	 * @param nums
+	 * @param k
+	 * @param i
+	 */
+	private static void parition(int[] nums, int k, int start, int sub) {
+
+		if (start == nums.length) {
+			if (sub == k) {
+				for (ArrayList<Integer> l : temp) {
+					ArrayList<Integer> node = new ArrayList<Integer>(l);
+					ans.add(node);
+				}
+			}
+			return;
+		}
+
+		for (int i = 0; i < k; i++) {
+			if (temp.get(i).size() > 0) {
+				temp.get(i).add(nums[start]);
+				parition(nums, k, start + 1, sub);
+				temp.get(i).remove(temp.get(i).size() - 1);
+			} else {
+				temp.get(i).add(nums[start]);
+				parition(nums, k, start + 1, sub + 1);
+				temp.get(i).remove(temp.get(i).size() - 1);
+				break;
+			}
+		}
+
+	}
+
+}

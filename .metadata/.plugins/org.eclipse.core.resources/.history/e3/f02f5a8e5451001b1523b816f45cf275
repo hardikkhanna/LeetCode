@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Arrays;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 8, 2021 Time : 7:21:39 AM
+ */
+public class QueriesOnPermutationWithKey extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int[] queries = get1DArray();
+		int m = sc.nextInt();
+		queries = processQueries(queries,m);
+		Arrays.stream(queries).forEach(i->System.out.print(queries[i] + " "));
+
+	}
+
+	/**
+	 * @param queries
+	 * @param m
+	 * @return
+	 */
+	private static int[] processQueries(int[] queries, int m) {
+		int[] P = new int[m];
+		for(int i : P) {
+			P[i] = i + 1;
+		}
+		
+		return null;
+	}
+
+}

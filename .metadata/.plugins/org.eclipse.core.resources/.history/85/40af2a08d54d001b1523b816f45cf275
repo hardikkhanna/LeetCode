@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ *         Date : Jan 3, 2021 Time : 7:59:44 PM
+ */
+public class CountGoodMeals {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] deliciousness = new int[n];
+		for (int i = 0; i < n; i++) {
+			deliciousness[i] = sc.nextInt();
+		}
+		int ans = countPairs(deliciousness);
+		System.out.println(ans);
+		sc.close();
+
+	}
+
+	/**
+	 * @param deliciousness
+	 * @return
+	 */
+	private static int countPairs(int[] deliciousness) {
+		for (int i = 0; i < deliciousness.length - 1; i++) {
+			for (int j = i + 1; j < deliciousness.length; j++) {
+				int sum = deliciousness[i] + deliciousness[j];
+				if ((int) (Math.ceil((Math.log(sum) / Math.log(2)))) == (int) (Math
+						.floor(((Math.log(sum) / Math.log(2)))))) {
+
+				}
+			}
+		}
+		return 0;
+	}
+
+}

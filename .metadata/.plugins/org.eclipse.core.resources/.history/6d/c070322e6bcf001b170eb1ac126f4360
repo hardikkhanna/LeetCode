@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package leetcode.priorityQueue.problems;
+
+import java.util.Scanner;
+
+import leetcode.array.problems.ScannerInput;
+
+/**
+ * @author Hardik
+ *
+ *         Date : 08-May-2021 Time : 6:15:10 pm
+ */
+public class KthLargestElement extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] arr = get1DArray();
+		int k = sc.nextInt();
+		int kLargest = kthLargest(arr, arr.length, k);
+		System.out.println(kLargest);
+		sc.close();
+	}
+
+	/**
+	 * @param arr
+	 * @param length
+	 * @param k
+	 * @return
+	 */
+	private static int kthLargest(int[] arr, int length, int k) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

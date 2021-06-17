@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+package leetcode.linkedlist.prolems;
+
+import java.util.HashSet;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 16-Apr-2021 Time : 10:06:30 pm
+ */
+public class RemoveDuplicatesInUnsortedList extends ScannerInput {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ListNode head = scannerInput();
+		removeDuplicates(head);
+		printLinkedList(head);
+
+	}
+
+	/**
+	 * @param head
+	 */
+	private static void removeDuplicates(ListNode head) {
+		// Base Case
+		if (head == null)
+			return;
+
+		// Create a set to store the elemnets of list
+		HashSet<Integer> set = new HashSet<Integer>();
+		ListNode temp = head.next;
+		ListNode prev = head;
+		set.add(temp.val);
+		while (temp.next != null) {
+			if (set.contains(temp.val)) {
+				prev.next = temp.next;
+				temp.next = null;
+			} else {
+				set.add(temp.val);
+			}
+
+		}
+
+	}
+}

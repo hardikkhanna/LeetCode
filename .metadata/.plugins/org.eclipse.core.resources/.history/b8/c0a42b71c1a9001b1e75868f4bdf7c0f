@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.HashMap;
+
+/**
+ * @author NIPC-57
+ *
+ *         Date : 30-Apr-2021 Time : 8:01:26 pm
+ */
+public class SortWordsByDecreasingFreq {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String str = "My Name is Hardik Khanna Name My";
+		String ans = getSortedString(str);
+		System.out.println(ans);
+
+	}
+
+	/**
+	 * @param str
+	 * @return
+	 */
+	private static String getSortedString(String str) {
+		// check for base cases
+		if(str == null || str.length() == 0) {
+			return "";
+		}
+		
+		HashMap<String, Integer> map = new HashMap<>();
+		return null;
+	}
+
+}

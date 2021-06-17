@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package leetcode.math.probems;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 18, 2021
+ * Time : 7:36:52 AM
+ */
+public class Maximum69Number {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package leetcode.array.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Jan 3, 2021
+ * Time : 1:12:13 PM
+ */
+public class CountNegativeNumbersInSortedMatrix {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[][] matrix = new int[row][col];
+		sc.close();
+
+	}
+
+}

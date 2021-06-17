@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package oops.concepts;
+
+/**
+ * @author NIPC-43
+ *
+ * Date : Mar 26, 2021
+ * Time : 5:12:16 PM
+ */
+public class JusPay {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

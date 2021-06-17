@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package leetcode.string.problems;
+
+import java.util.Scanner;
+
+/**
+ * @author NIPC-57
+ *
+ * Date : 12-Jun-2021
+ * Time : 3:44:54 pm
+ */
+public class Antiblot {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		System.out.println(antiblot(str));
+
+	}
+
+}
